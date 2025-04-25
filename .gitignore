@@ -1,0 +1,9 @@
+# ignore fasl files
+*.fasl
+
+# ignore emacs files
+*~
+.#*
+#*
+*#
+*##
