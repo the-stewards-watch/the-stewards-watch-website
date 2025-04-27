@@ -3,14 +3,6 @@
 (defvar *http-server* nil
   "The Application's HTTP server.")
 
-;;; Handlers
-
-(tiny-routes:define-routes *app-routes*
-  (tiny-routes:define-get "/" () (tiny-routes:ok "alive"))
-  (tiny-routes:define-any "*" () (tiny-routes:not-found "not found")))
-
-;;; App control functions
-
 (defun stop-http-server ()
   (when *http-server*
     (clack:stop *http-server*)
