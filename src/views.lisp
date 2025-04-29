@@ -8,6 +8,7 @@
 ;; Page rendering functions
 (defun render-index-page ()
   (djula:render-template* +index-template+ nil
-			  :title "The Steward"))
+			  :title "The Steward"
+			  :now "2025"))
 
 
