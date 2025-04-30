@@ -8,27 +8,31 @@
   </head>
   <body>
     <header>
-      <h1>{{ title }}</h1>
-      <nav class="main-nav">
-	<ul>
-	  <li><a href="/" {% ifequal active "home" %}class="active"{% endifequal %}>Home</a></li>
-	  <li><a href="/services" {% ifequal active "services" %}class="active"{% endifequal %}>Services</a></li>
-	  <li><a href="/about" {% ifequal active "about" %}class="active"{% endifequal %}>About</a></li>
-	  <li><a href="/testimonials" {% ifequal active "testimonials" %}class="active"{% endifequal %}>Testimonials</a></li>
-	  <li><a href="/contact" {% ifequal active "contact" %}class="active"{% endifequal %}>Contact</a></li>
-	</ul>
-      </nav>
+      <div class="container">
+	<h1>{{ title }}</h1>
+	<nav class="main-nav">
+	  <ul>
+	    <li><a href="/" {% ifequal active "home" %}class="active"{% endifequal %}>Home</a></li>
+	    <li><a href="/services" {% ifequal active "services" %}class="active"{% endifequal %}>Services</a></li>
+	    <li><a href="/about" {% ifequal active "about" %}class="active"{% endifequal %}>About</a></li>
+	    <li><a href="/testimonials" {% ifequal active "testimonials" %}class="active"{% endifequal %}>Testimonials</a></li>
+	    <li><a href="/contact" {% ifequal active "contact" %}class="active"{% endifequal %}>Contact</a></li>
+	  </ul>
+	</nav>
+      </div>
     </header>
-    <main>
+    <main class="container">
       {% block content %}{% endblock %}
     </main>
     <footer>
-      <div class="footer-content">
-	<p>&copy; {{ now }} The Steward - Professional House Sitting Services</p>
-	<div class="footer-links">
-	  <a href="/about">About</a>
-	  <a href="/services">Services</a>
-	  <a href="/contact">Contact</a>
+      <div class="container">
+	<div class="footer-content">
+	  <p>&copy; {{ now }} The Steward - Professional House Sitting Services</p>
+	  <div class="footer-links">
+	    <a href="/about">About</a>
+	    <a href="/services">Services</a>
+	    <a href="/contact">Contact</a>
+	  </div>
 	</div>
       </div>
     </footer>
