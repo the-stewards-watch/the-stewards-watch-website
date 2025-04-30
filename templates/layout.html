@@ -11,10 +11,11 @@
       <h1>{{ title }}</h1>
       <nav class="main-nav">
 	<ul>
-	  <li><a href="/services">Services</a></li>
-	  <li><a href="/about">About</a></li>
-	  <li><a href="/testimonials">Testimonials</a></li>
-	  <li><a href="/contact">Contact</a></li>
+	  <li><a href="/" {% ifequal active "home" %}class="active"{% endifequal %}>Home</a></li>
+	  <li><a href="/services" {% ifequal active "services" %}class="active"{% endifequal %}>Services</a></li>
+	  <li><a href="/about" {% ifequal active "about" %}class="active"{% endifequal %}>About</a></li>
+	  <li><a href="/testimonials" {% ifequal active "testimonials" %}class="active"{% endifequal %}>Testimonials</a></li>
+	  <li><a href="/contact" {% ifequal active "contact" %}class="active"{% endifequal %}>Contact</a></li>
 	</ul>
       </nav>
     </header>
