@@ -200,6 +200,159 @@ footer {
     text-decoration: underline;
 }
 
+/* Shared section styles */
+.section-title {
+    margin-top: 2rem;
+}
+
+/* Services Page Styles */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.service-item {
+    background-color: var(--neutral-light);
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translate(-5px);
+}
+
+.service-item h3 {
+    color: var(--neutral-dark);
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.cta {
+    font-size: 1.2rem;
+    margin: 2rem 0 1rem;
+    font-weight: 500;
+}
+
+/* Testimonials Page Styles */
+.testimonials {
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.testimonial {
+    background-color: var(--neutral-light);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.testimonial p::before {
+    content: """";
+    font-size: 3rem;
+    color: var(--accent-color);
+    opacity: 0.2;
+    position: absolute;
+    left: -1rem;
+    top: -1rem;
+}
+
+.testimonial cite {
+    display: block;
+    text-align: right;
+    font-weight: 500;
+    color: var(--neutral-dark);
+}
+
+/* Contact Page Styles */
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.contact-info {
+    background-color: var(--neutral-light);
+    padding: 1.5rem;
+    border-radius: 5px;
+}
+
+.contact-info h3, .contact-form h3 {
+    color: var(--neutral-dark);
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.service-areas {
+    list-style-type: none;
+    padding: 0;
+}
+
+.service-areas li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.service-areas li:last-child {
+    border-bottom: none;
+}
+
+.contact-form {
+    background-color: var(--neutral-light);
+    padding: 1.5rem;
+    border-radius: 5px;
+}
+
+/* About Page Styles */
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.about-section:last-child {
+    border-bottom: none;
+}
+
+.about-section h3 {
+    color: var(--neutral-dark);
+    margin-bottom: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .services-grid,
+    .contact-container {
+	grid-template-columns: 1fr;
+    }
+
+    .testimonial {
+	padding: 1.25rem;
+    }
+
+    .about-section {
+	margin-bottom: 2rem;
+	padding-bottom: 1rem;
+    }
+}
+
 /* tablet styles (768px to 1024px) */
 @media (max-width: 1024px) {
     header h1 {
