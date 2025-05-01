@@ -1,11 +1,11 @@
 /* Color palette */
 :root {
-    --primary-color: #f9f9f9;     /* Light cream background */
-    --text-color: #333333;         /* Dark gray for text */
-    --accent-color: #e67e22;       /* Warm orange for accents */
-    --secondary-accent: #27ae60;   /* Soft green (plants, nature) */
-    --neutral-light: #f5f5f5;      /* Light neutral for sections */
-    --neutral-dark: #2c3e50;
+    --primary-color: #f2f0e6;      /* Slightly darker cream background */
+    --text-color: #2a2a2a;         /* Deeper text color */
+    --accent-color: #d35400;       /* Richer orange accent */
+    --secondary-accent: #1e8449;   /* Deeper green */
+    --neutral-light: #e8e5dc;      /* Darker neutral for sections - more contrast */
+    --neutral-dark: #34495e;       /* Darker slate for headers/footers */
 
 /* Base styles for all devices */
 
