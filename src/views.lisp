@@ -39,5 +39,3 @@
 			  :title "The Steward"
 			  :active "contact"
 			  :now (local-time:format-timestring nil (local-time:now) :format '(:year))))
-
-
