@@ -32,6 +32,101 @@ table {
     border-collapse: collapse;
 }
 
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.logo {
+  height: 120px;
+  max-width: 90%;
+}
+
+/* Typography improvements */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Georgia", serif;
+  line-height: 1.3;
+  color: var(--neutral-dark);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+/* Decorative underline for h2 - wider version */
+h2:after {
+  content: "";
+  display: block;
+  width: 120px;  /* Doubled from 60px to 120px */
+  height: 3px;
+  background: var(--accent-color);
+  margin: 0.5rem auto 0;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--neutral-dark);
+  margin-bottom: 2rem;
+}
+
+/* Text emphasis classes */
+.highlight {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-large {
+  font-size: 1.25rem;
+}
+
+/* Ensure good spacing in lists */
+ul, ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* Icon styling */
+.fas, .far {
+  margin-right: 0.5rem;
+  color: var(--accent-color);
+}
+
+h3 .fas, h3 .far {
+  font-size: 0.9em;
+}
+
+.service-areas .fas {
+  font-size: 0.8em;
+}
+
 @media (max-width: 767px) {
     table, thead, tbody, th, td, tr {
 	display: block;
@@ -62,6 +157,10 @@ table {
 	white-space: nowrap;
 	content: attr(data-label);
 	font-weight: bold;
+    }
+
+    .logo {
+	height: 50px;
     }
 }
 

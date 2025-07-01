@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>{% block title %}{{ title }}{% endblock %}</title>
     <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   </head>
   <body>
     <header>
       <div class="container">
-	<h1>{{ title }}</h1>
+	<div class="logo-container">
+	  <img src="/static/images/logo.png" alt="The Steward - Professional House Sitting" class="logo">
+	</div>
 	<nav class="main-nav">
 	  <ul>
 	    <li><a href="/" {% ifequal active "home" %}class="active"{% endifequal %}>Home</a></li>
