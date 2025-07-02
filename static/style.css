@@ -6,6 +6,47 @@
     --secondary-accent: #1e8449;   /* Deeper green */
     --neutral-light: #e8e5dc;      /* Darker neutral for sections - more contrast */
     --neutral-dark: #34495e;       /* Darker slate for headers/footers */
+/* Updated hero section to avoid overlapping with navigation */
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/static/images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  padding: 4rem 1rem;
+  margin: 0 -1rem 2rem -1rem; /* Removed negative top margin */
+  width: calc(100% + 2rem);
+  box-sizing: border-box;
+}
+
+.hero h2 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero h2:after {
+  background: white;
+}
+
+.hero .subtitle {
+  color: white;
+  opacity: 0.9;
+  font-size: 1.2rem;
+}
+
+.hero .button {
+  background-color: var(--accent-color);
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  padding: 0.8rem 2rem;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
 
 /* Base styles for all devices */
 
@@ -250,8 +291,13 @@ body {
 }
 
 main {
-    padding: 2rem;
-    text-align: center;
+  padding: 0; /* Change from 2rem to 0 */
+  text-align: center;
+}
+
+/* Add this for non-hero content */
+main > *:not(.hero) {
+  padding: 0 2rem;
 }
 
 a.button {
