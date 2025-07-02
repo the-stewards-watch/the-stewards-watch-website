@@ -6,7 +6,7 @@
     --secondary-accent: #1e8449;   /* Deeper green */
     --neutral-light: #e8e5dc;      /* Darker neutral for sections - more contrast */
     --neutral-dark: #34495e;       /* Darker slate for headers/footers */
-/* Updated hero section to avoid overlapping with navigation */
+/* Hero section styles - outside main content */
 .hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/static/images/hero-bg.jpg');
   background-size: cover;
@@ -14,9 +14,8 @@
   background-repeat: no-repeat;
   color: white;
   text-align: center;
-  padding: 4rem 1rem;
-  margin: 0 -1rem 2rem -1rem; /* Removed negative top margin */
-  width: calc(100% + 2rem);
+  padding: 4rem 0;  /* Removed horizontal padding */
+  width: 100%;      /* Full width, no calculations needed */
   box-sizing: border-box;
 }
 
@@ -46,6 +45,7 @@
 .hero-content {
   max-width: 800px;
   margin: 0 auto;
+  padding: 0 1rem; /* Move horizontal padding here */
 }
 
 /* Base styles for all devices */
