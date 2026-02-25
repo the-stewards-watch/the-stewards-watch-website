@@ -403,6 +403,33 @@ footer {
     margin: 0 auto;
 }
 
+.footer-brand {
+    font-weight: bold;
+    margin-bottom: 0.4rem;
+}
+
+.footer-contact-line {
+    margin-bottom: 0.3rem;
+}
+
+.footer-contact-line a,
+.footer-area {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.footer-contact-line a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.footer-contact-line i,
+.footer-area i {
+    color: var(--accent-color);
+    margin-right: 0.3rem;
+}
+
 .footer-links {
     margin-top: 1rem;
 }
