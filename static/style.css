@@ -6,6 +6,8 @@
     --secondary-accent: #1e8449;   /* Deeper green */
     --neutral-light: #e8e5dc;      /* Darker neutral for sections - more contrast */
     --neutral-dark: #34495e;       /* Darker slate for headers/footers */
+}
+
 /* Hero section styles - outside main content */
 .hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/static/images/hero-bg.jpg');
@@ -537,7 +539,7 @@ footer {
     }
 
     a.button {
-	padding: 0,6rem 1.2rem;
+	padding: 0.6rem 1.2rem;
 	font-size: 0.9rem;
     }
 
