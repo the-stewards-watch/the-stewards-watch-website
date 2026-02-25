@@ -3,7 +3,17 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- SEO Meta Tags -->
     <title>{% block title %}{{ title }}{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}The Steward's Watch provides professional, owner-operated house sitting services across Putnam and Dutchess Counties, NY. Home security, pet care, plant maintenance, and more.{% endblock %}">
+
+    <!-- Open Graph / Social Media Tags -->
+    <meta property="og:title" content="{% block og_title %}The Steward's Watch - Professional House Sitting{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Owner-operated house sitting in Putnam &amp; Dutchess Counties, NY. Your home cared for while you're away.{% endblock %}">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/static/images/logo.png">
+
     <link rel="stylesheet" href="/static/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   </head>
@@ -11,7 +21,7 @@
     <header>
       <div class="container">
 	<div class="logo-container">
-	  <img src="/static/images/logo.svg" alt="The Steward's Watch - Professional House Sitting" class="logo">
+	  <img src="/static/images/logo.png" alt="The Steward's Watch - Professional House Sitting" class="logo">
 	</div>
 	<nav class="main-nav">
 	  <ul>
@@ -39,6 +49,39 @@
 	</div>
       </div>
     </footer>
+    <!-- Schema.org markup for local business -->
+    <script type="application/ld+json">
+      {
+	  "@context": "https://schema.org",
+	  "@type": "LocalBusiness",
+	  "name": "The Steward's Watch LLC",
+	  "image": "/static/images/logo.png",
+	  "telephone": "+1-845-803-1769",
+	  "email": "thestewardswatch@gmail.com",
+	  "address": {
+	      "@type": "PostalAddress",
+	      "addressLocality": "Kent",
+	      "addressRegion": "NY",
+	      "addressCountry": "US"
+	  },
+	  "geo": {
+	      "@type": "GeoCoordinates",
+	      "latitude": 41.4428,
+	      "longitude": -73.7301
+	  },
+	  "areaServed": [
+	      {
+		  "@type": "AdministrativeArea",
+		  "name": "Putnam County, NY"
+	      },
+	      {
+		  "@type": "AdministrativeArea",
+		  "name": "Dutchess County, NY"
+	      }
+	  ],
+	  "priceRange": "$$",
+	  "description": "Owner-operated house sitting services in Putnam and Dutchess Counties, NY. Home security, pet care, plant maintenance, and property monitoring."
+      }
+    </script>
   </body>
 </html>
-
