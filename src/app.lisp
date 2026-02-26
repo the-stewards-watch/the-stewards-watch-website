@@ -5,12 +5,13 @@
   "The Application's HTTP server.")
 (defvar *app-root* (asdf:system-source-directory :the-steward-website))
 
-;; SMTP configuration — set these via environment variables before starting.
-;; For Gmail: generate an App Password at myaccount.google.com/apppasswords
-(defvar *smtp-host* (or (uiop:getenv "SMTP_HOST") "smtp.gmail.com"))
-(defvar *smtp-port* (parse-integer (or (uiop:getenv "SMTP_PORT") "587")))
-(defvar *smtp-user* (or (uiop:getenv "SMTP_USER") "thestewardswatch@gmail.com"))
-(defvar *smtp-password* (uiop:getenv "SMTP_PASSWORD"))
+;; Resend API configuration — set these via environment variables before starting.
+;; Sign up at resend.com (free tier: 3,000 emails/month, 100/day).
+;; RESEND_API_KEY  — your Resend API key (required)
+;; CONTACT_FROM    — verified sending address in your Resend account (required)
+;; CONTACT_TO      — inbox that receives contact form submissions
+(defvar *resend-api-key* (uiop:getenv "RESEND_API_KEY"))
+(defvar *contact-from* (or (uiop:getenv "CONTACT_FROM") "The Stewards Watch <contact@thestewardswatch.com>"))
 (defvar *contact-to* (or (uiop:getenv "CONTACT_TO") "thestewardswatch@gmail.com"))
 
 ;; Set up  Djula template directory

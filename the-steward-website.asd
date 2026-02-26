@@ -10,7 +10,7 @@
 	       #:postmodern
 	       #:alexandria
 	       #:cl-json
-	       #:cl-smtp)
+	       #:dexador)
   :components ((:module "src"
 		:components ((:file "package")
 			     (:file "app")

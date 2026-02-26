@@ -10,18 +10,20 @@
   (cdr (assoc key params :test #'string=)))
 
 (defun send-contact-email (name email phone message)
-  "Send a contact form submission to the business inbox via Gmail SMTP."
-  (cl-smtp:send-email
-   *smtp-host*
-   *smtp-user*
-   *contact-to*
-   (format nil "New inquiry from ~a" name)
-   (format nil "Name:    ~a~%Email:   ~a~%Phone:   ~a~%~%~a"
-           name email (if (and phone (> (length phone) 0)) phone "—") message)
-   :authentication (list :login *smtp-user* *smtp-password*)
-   :ssl :starttls
-   :port *smtp-port*
-   :extra-headers (list (cons "Reply-To" email))))
+  "Send a contact form submission to the business inbox via the Resend API."
+  (let ((body (cl-json:encode-json-alist-to-string
+               `(("from"     . ,*contact-from*)
+                 ("to"       . ,(vector *contact-to*))
+                 ("reply_to" . ,email)
+                 ("subject"  . ,(format nil "New inquiry from ~a" name))
+                 ("text"     . ,(format nil "Name:    ~a~%Email:   ~a~%Phone:   ~a~%~%~a"
+                                        name email
+                                        (if (and phone (> (length phone) 0)) phone "—")
+                                        message))))))
+    (dexador:post "https://api.resend.com/emails"
+                  :headers `(("Authorization" . ,(format nil "Bearer ~a" *resend-api-key*))
+                              ("Content-Type"  . "application/json"))
+                  :content body)))
 
 ;; ---------------------------------------------------------------------------
 ;; Template definitions
