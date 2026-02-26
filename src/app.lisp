@@ -5,6 +5,14 @@
   "The Application's HTTP server.")
 (defvar *app-root* (asdf:system-source-directory :the-steward-website))
 
+;; SMTP configuration — set these via environment variables before starting.
+;; For Gmail: generate an App Password at myaccount.google.com/apppasswords
+(defvar *smtp-host* (or (uiop:getenv "SMTP_HOST") "smtp.gmail.com"))
+(defvar *smtp-port* (parse-integer (or (uiop:getenv "SMTP_PORT") "587")))
+(defvar *smtp-user* (or (uiop:getenv "SMTP_USER") "thestewardswatch@gmail.com"))
+(defvar *smtp-password* (uiop:getenv "SMTP_PASSWORD"))
+(defvar *contact-to* (or (uiop:getenv "CONTACT_TO") "thestewardswatch@gmail.com"))
+
 ;; Set up  Djula template directory
 (djula:add-template-directory (asdf:system-relative-pathname "the-steward-website" "templates/"))
 

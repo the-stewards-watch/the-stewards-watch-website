@@ -9,7 +9,8 @@
 	       #:mito
 	       #:postmodern
 	       #:alexandria
-	       #:cl-json)
+	       #:cl-json
+	       #:cl-smtp)
   :components ((:module "src"
 		:components ((:file "package")
 			     (:file "app")

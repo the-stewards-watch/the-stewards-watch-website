@@ -9,6 +9,17 @@
 <h2>Get in Touch</h2>
 <p>We'd love to discuss how we can help with your house sitting needs.</p>
 
+{% if sent %}
+<div class="form-notice form-notice--success">
+  <i class="fas fa-check-circle"></i> Message sent! We'll get back to you within 24 hours.
+</div>
+{% endif %}
+{% if error %}
+<div class="form-notice form-notice--error">
+  <i class="fas fa-exclamation-circle"></i> Something went wrong sending your message. Please call us at <a href="tel:+18458031769">(845) 803-1769</a> or email <a href="mailto:thestewardswatch@gmail.com">thestewardswatch@gmail.com</a> directly.
+</div>
+{% endif %}
+
 <div class="contact-container">
   <div class="contact-info">
     <h3><i class="fas fa-address-card"></i> Contact Information</h3>
@@ -31,7 +42,7 @@
   <div class="contact-form">
     <h3>Send Us a Message</h3>
     <p>Fill out the form below and we'll get back to you within 24 hours.</p>
-    <form class="inquiry-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <form class="inquiry-form" action="/contact" method="POST">
       <div class="form-group">
         <label for="name">Your Name <span class="required">*</span></label>
         <input type="text" id="name" name="name" required placeholder="Jane Smith">
@@ -48,7 +59,6 @@
         <label for="message">Message <span class="required">*</span></label>
         <textarea id="message" name="message" rows="5" required placeholder="Tell us about your house sitting needs — dates, pets, anything helpful."></textarea>
       </div>
-      <input type="text" name="_gotcha" style="display:none">
       <button type="submit" class="button">Send Message</button>
     </form>
   </div>

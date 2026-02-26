@@ -1,6 +1,32 @@
 ;;;; views.lisp
 (in-package :the-steward-website)
 
+;; ---------------------------------------------------------------------------
+;; Contact form helpers
+;; ---------------------------------------------------------------------------
+
+(defun get-form-param (params key)
+  "Return the value for KEY from a Lack request-body-parameters alist."
+  (cdr (assoc key params :test #'string=)))
+
+(defun send-contact-email (name email phone message)
+  "Send a contact form submission to the business inbox via Gmail SMTP."
+  (cl-smtp:send-email
+   *smtp-host*
+   *smtp-user*
+   *contact-to*
+   (format nil "New inquiry from ~a" name)
+   (format nil "Name:    ~a~%Email:   ~a~%Phone:   ~a~%~%~a"
+           name email (if (and phone (> (length phone) 0)) phone "—") message)
+   :authentication (list :login *smtp-user* *smtp-password*)
+   :ssl :starttls
+   :port *smtp-port*
+   :extra-headers (list (cons "Reply-To" email))))
+
+;; ---------------------------------------------------------------------------
+;; Template definitions
+;; ---------------------------------------------------------------------------
+
 ;; Define template variables
 (defparameter +base-template+ (djula:compile-template* "layout.html"))
 (defparameter +index-template+ (djula:compile-template* "index.html"))
@@ -34,8 +60,10 @@
 			  :active "testimonials"
 			  :now (local-time:format-timestring nil (local-time:now) :format '(:year))))
 
-(defun render-contact-page ()
+(defun render-contact-page (&key sent error)
   (djula:render-template* +contact-template+ nil
 			  :title "The Steward"
 			  :active "contact"
+			  :sent sent
+			  :error error
 			  :now (local-time:format-timestring nil (local-time:now) :format '(:year))))
