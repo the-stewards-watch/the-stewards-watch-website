@@ -4,8 +4,10 @@
   :license "GPL"
   :version "0.1.0"
   :depends-on (#:clack
+	       #:woo
 	       #:tiny-routes
 	       #:djula
+	       #:local-time
 	       #:mito
 	       #:postmodern
 	       #:alexandria
