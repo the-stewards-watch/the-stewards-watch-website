@@ -561,6 +561,69 @@ footer {
     border-radius: 5px;
 }
 
+.inquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    text-align: left;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.form-group label {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--neutral-dark);
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.65rem 0.85rem;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 4px;
+    background-color: white;
+    color: var(--text-color);
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.required {
+    color: var(--accent-color);
+}
+
+button.button {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    color: white;
+    background-color: var(--neutral-dark);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+button.button:hover {
+    background-color: var(--accent-color);
+}
+
 /* About Page Styles */
 .about-content {
     max-width: 900px;
