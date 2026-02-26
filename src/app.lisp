@@ -11,7 +11,7 @@
 ;; CONTACT_FROM    — verified sending address in your Resend account (required)
 ;; CONTACT_TO      — inbox that receives contact form submissions
 (defvar *resend-api-key* (uiop:getenv "RESEND_API_KEY"))
-(defvar *contact-from* (or (uiop:getenv "CONTACT_FROM") "The Stewards Watch <contact@thestewardswatch.com>"))
+(defvar *contact-from* (or (uiop:getenv "CONTACT_FROM") "The Stewards Watch <noreply@mail.thestewardswatch.com>"))
 (defvar *contact-to* (or (uiop:getenv "CONTACT_TO") "thestewardswatch@gmail.com"))
 
 ;; Set up  Djula template directory
