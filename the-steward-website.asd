@@ -9,8 +9,6 @@
 	       #:tiny-routes
 	       #:djula
 	       #:local-time
-	       #:mito
-	       #:postmodern
 	       #:alexandria
 	       #:cl-json
 	       #:dexador)

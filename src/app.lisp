@@ -39,6 +39,19 @@
 (defun stop-app ()
   (stop-http-server))
 
+(defun main ()
+  "Production entry point used by Docker/systemd.
+Starts the server, installs a SIGTERM handler for graceful shutdown,
+then blocks so the process stays alive."
+  (start-app)
+  (sb-sys:enable-interrupt sb-unix:sigterm
+    (lambda (signal code scp)
+      (declare (ignore signal code scp))
+      (format t "~&Received SIGTERM — shutting down.~%")
+      (stop-app)
+      (sb-ext:exit 0)))
+  (loop (sleep 60)))
+
 (defun start-app (&key
 		    (host (or (uiop:getenv "HOST") "0.0.0.0"))
 		    (port (let ((p (uiop:getenv "PORT")))
