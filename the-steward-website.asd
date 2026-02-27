@@ -5,6 +5,7 @@
   :version "0.1.0"
   :depends-on (#:clack
 	       #:woo
+	       #:lack/request
 	       #:tiny-routes
 	       #:djula
 	       #:local-time
