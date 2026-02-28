@@ -3,12 +3,8 @@
 # Build:
 #   docker build -t the-steward-website .
 #
-# Run:
-#   docker run -p 8080:8080 \
-#     -e RESEND_API_KEY=re_xxx \
-#     -e CONTACT_FROM="The Stewards Watch <noreply@mail.example.com>" \
-#     -e CONTACT_TO=you@example.com \
-#     the-steward-website
+# Run (PORT defaults to 8080):
+#   docker run -p 8080:8080 --env-file .env the-steward-website
 
 # Pin to a specific SBCL version for reproducible builds.
 # To upgrade: update the tag and rebuild from scratch.
@@ -51,6 +47,6 @@ EXPOSE 8080
 
 # Wait 90s on first start (Quicklisp compile time), then check every 30s.
 HEALTHCHECK --interval=30s --timeout=5s --start-period=90s --retries=3 \
-  CMD curl -fsS http://localhost:8080/ > /dev/null || exit 1
+  CMD curl -fsS http://localhost:${PORT:-8080}/ > /dev/null || exit 1
 
 ENTRYPOINT ["/app/entrypoint.sh"]
