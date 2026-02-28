@@ -92,7 +92,7 @@ The app will restart automatically on crash or system reboot.
 
 ### Reverse proxy
 
-In production, put Caddy or Nginx in front of the container to handle SSL/TLS.
+In production, put Caddy, Nginx, or Traefik in front of the container to handle SSL/TLS.
 
 **Example Caddyfile:**
 
@@ -103,3 +103,15 @@ thestewardswatch.com {
 ```
 
 Caddy obtains and renews Let's Encrypt certificates automatically.
+
+**Example Traefik labels (docker-compose):**
+
+```yaml
+labels:
+  - "traefik.enable=true"
+  - "traefik.http.routers.steward.rule=Host(`thestewardswatch.com`)"
+  - "traefik.http.routers.steward.entrypoints=websecure"
+  - "traefik.http.routers.steward.tls.certresolver=letsencrypt"
+```
+
+Traefik is a good choice if you're already running multiple containerised services and want a single entry point that handles routing and TLS for all of them.
