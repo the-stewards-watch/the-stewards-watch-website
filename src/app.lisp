@@ -61,6 +61,6 @@ then blocks so the process stays alive."
   ;; env vars set in Docker / systemd / the shell are always picked up.
   (setf *resend-api-key* (uiop:getenv "RESEND_API_KEY"))
   (setf *contact-from* (or (uiop:getenv "CONTACT_FROM")
-			    "The Stewards Watch <noreply@mail.thestewardswatch.com>"))
+			    "The Stewards Watch <contact@mail.thestewardswatch.com>"))
   (setf *contact-to* (or (uiop:getenv "CONTACT_TO") "thestewardswatch@gmail.com"))
   (start-http-server (build-app) :host host :port port :debug debug))
