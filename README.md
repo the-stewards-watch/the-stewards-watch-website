@@ -32,7 +32,15 @@ cd the-steward-website
 cp .env.example .env   # fill in your Resend API key and email addresses
 ```
 
-Load in SBCL:
+The app reads configuration from **OS environment variables** (via `uiop:getenv`), not
+directly from the `.env` file. When running locally without Docker you need to export
+those variables into your shell before starting SBCL:
+
+```bash
+export $(grep -v '^#' .env | xargs)
+```
+
+Then load in SBCL:
 
 ```lisp
 (ql:quickload :the-steward-website)
@@ -41,9 +49,14 @@ Load in SBCL:
 
 The app listens on `http://localhost:8080` by default.
 
+> **Tip:** [direnv](https://direnv.net/) can load `.env` automatically whenever you enter
+> the project directory, so you don't need to run the export command manually each time.
+
 ## Environment Variables
 
-Copy `.env.example` to `.env` and set the following:
+The app reads these variables from the OS environment at startup. Copy `.env.example`
+to `.env` and fill in your values — how those values reach the process depends on how
+you're running the app (see Local Development and Deployment sections above).
 
 | Variable        | Description                                          |
 |-----------------|------------------------------------------------------|
@@ -70,6 +83,10 @@ docker run -p 8080:8080 --env-file .env the-steward-website
 ```bash
 docker-compose up -d
 ```
+
+`docker-compose.yml` is configured with `env_file: .env`, so Docker Compose reads the
+`.env` file automatically and injects the variables into the container — no manual
+export step needed.
 
 The app will restart automatically on crash or system reboot.
 
