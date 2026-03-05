@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Meta Tags -->
     <title>{% block title %}{{ title }}{% endblock %}</title>
@@ -31,7 +31,6 @@
 	    <li><a href="/" {% ifequal active "home" %}class="active"{% endifequal %}>Home</a></li>
 	    <li><a href="/services" {% ifequal active "services" %}class="active"{% endifequal %}>Services</a></li>
 	    <li><a href="/about" {% ifequal active "about" %}class="active"{% endifequal %}>About</a></li>
-	    <li><a href="/testimonials" {% ifequal active "testimonials" %}class="active"{% endifequal %}>Testimonials</a></li>
 	    <li><a href="/contact" {% ifequal active "contact" %}class="active"{% endifequal %}>Contact</a></li>
 	  </ul>
 	</nav>
