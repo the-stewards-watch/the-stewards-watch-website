@@ -758,6 +758,85 @@ button.button:hover {
     }
 }
 
+/* Service icon sizing */
+.service-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.75rem;
+  margin-right: 0;
+}
+
+/* Make service cards flex so price anchors to bottom */
+.service-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-item p {
+  flex: 1;
+}
+
+/* Price display */
+.service-price {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 2px solid var(--accent-color);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--neutral-dark);
+  font-family: "Georgia", serif;
+}
+
+.service-price-unit {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #777;
+}
+
+.service-price-note {
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 0.25rem;
+}
+
+/* Add-ons section */
+.addons-section {
+  margin: 3rem 0 2rem;
+}
+
+.addons-table {
+  max-width: 600px;
+  margin: 1rem auto;
+}
+
+.addons-table th,
+.addons-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.addons-table thead th {
+  background-color: var(--neutral-dark);
+  color: white;
+}
+
+.addons-table tbody tr:nth-child(even) td {
+  background-color: var(--neutral-light);
+}
+
+.addons-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Travel surcharge note */
+.travel-note {
+  font-size: 0.95rem;
+  color: #666;
+  font-style: italic;
+  margin: 1.5rem 0;
+}
+
 /* Small phones (up to 480px) */
 @media (max-width: 480px) {
     header h1 {
