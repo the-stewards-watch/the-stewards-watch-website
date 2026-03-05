@@ -41,9 +41,37 @@
 
 .hero .button {
   background-color: var(--accent-color);
-  margin-top: 1.5rem;
   font-size: 1.1rem;
   padding: 0.8rem 2rem;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.hero-ctas .button {
+  margin-top: 0;
+}
+
+.button--ghost {
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  color: white;
+}
+
+.button--ghost:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: white;
+  color: white;
+}
+
+/* Override hero button accent bg for ghost variant */
+.hero .button--ghost {
+  background-color: transparent;
 }
 
 .hero-content {
@@ -349,7 +377,7 @@ main {
 /* Why Choose Us section */
 .why-us {
   padding: 4rem 2rem;
-  background-color: var(--primary-color);
+  background-color: var(--neutral-light);
 }
 
 .why-us h2 {
@@ -399,8 +427,8 @@ a.button:hover {
 
 /* Footer styles */
 footer {
-    background-color: var(--primary-color);
-    color: var(--text-color);
+    background-color: var(--neutral-dark);
+    color: rgba(255, 255, 255, 0.85);
     padding: 1.5rem;
     text-align: center;
     margin-top: 2rem;
@@ -422,13 +450,13 @@ footer {
 
 .footer-contact-line a,
 .footer-area {
-    color: var(--text-color);
+    color: rgba(255, 255, 255, 0.75);
     text-decoration: none;
     font-size: 0.95rem;
 }
 
 .footer-contact-line a:hover {
-    color: var(--accent-color);
+    color: white;
     text-decoration: underline;
 }
 
@@ -443,14 +471,14 @@ footer {
 }
 
 .footer-links a {
-    color: var(--text-color);
+    color: rgba(255, 255, 255, 0.75);
     margin: 0 0.5rem;
     text-decoration: none;
 }
 
 /* Footer link hover */
 .footer-links a:hover {
-    color: var(--accent-color);
+    color: white;
     text-decoration: underline;
 }
 
@@ -534,7 +562,7 @@ footer {
 /* Contact form notice banners */
 .form-notice {
     padding: 0.85rem 1.2rem;
-    border-radius: 5px;
+    border-radius: 8px;
     margin-bottom: 1.5rem;
     font-weight: 500;
 }
@@ -663,12 +691,14 @@ button.button:hover {
 .about-content {
     max-width: 900px;
     margin: 0 auto;
+    text-align: left;
 }
 
 .about-section {
     margin-bottom: 2.5rem;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid rgba(0,0,0,0.1);
+    overflow: hidden; /* clearfix for floated founder photo */
 }
 
 .about-section:last-child {
@@ -743,6 +773,10 @@ button.button:hover {
 	padding: 1rem;
     }
 
+    h1 {
+	font-size: 1.75rem;
+    }
+
     h2 {
 	font-size: 1.5rem;
     }
@@ -771,7 +805,7 @@ button.button:hover {
 /* Services Preview (homepage) */
 .services-preview {
   padding: 4rem 2rem;
-  background-color: var(--neutral-light);
+  background-color: var(--primary-color);
 }
 
 .services-preview h2 {
@@ -791,10 +825,12 @@ button.button:hover {
   flex: 1;
   min-width: 200px;
   max-width: 240px;
-  background-color: var(--primary-color);
+  background-color: var(--neutral-light);
   border-radius: 8px;
   padding: 1.25rem;
   box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
 }
 
 .preview-item > i {
@@ -895,6 +931,20 @@ button.button:hover {
 
 .addons-table tbody tr:last-child td {
   border-bottom: none;
+}
+
+/* Keyboard focus styles — visible focus rings for accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+.form-group input:focus-visible,
+.form-group textarea:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 0;
+  border-color: var(--accent-color);
 }
 
 /* Travel surcharge note */
