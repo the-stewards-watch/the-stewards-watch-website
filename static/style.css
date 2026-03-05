@@ -670,6 +670,23 @@ button.button:hover {
     margin-bottom: 1rem;
 }
 
+.founder-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    float: left;
+    margin: 0 1.5rem 1rem 0;
+}
+
+@media (max-width: 480px) {
+    .founder-photo {
+        float: none;
+        display: block;
+        margin: 0 auto 1.25rem;
+    }
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .services-grid,
