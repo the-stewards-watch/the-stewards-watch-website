@@ -487,12 +487,21 @@ footer {
     margin-top: 2rem;
 }
 
+/* Inner page content wrapper — provides top spacing and horizontal padding
+   that the full-width homepage sections don't need */
+.page-content {
+    padding: 2.5rem 2rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
 /* Services Page Styles */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin: 2rem 0;
+    margin: 2rem auto;
+    max-width: 960px;
 }
 
 .service-item {
@@ -596,6 +605,7 @@ footer {
     background-color: var(--neutral-light);
     padding: 1.5rem;
     border-radius: 8px;
+    text-align: left;
 }
 
 .contact-info h3, .contact-form h3 {
