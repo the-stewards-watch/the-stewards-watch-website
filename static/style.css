@@ -487,10 +487,23 @@ footer {
     margin-top: 2rem;
 }
 
-/* Inner page content wrapper — provides top spacing and horizontal padding
-   that the full-width homepage sections don't need */
+/* Inner page banner — dark slate strip with cream h1, sits below the header
+   on About / Services / Contact (homepage uses the full hero instead) */
+.page-banner {
+    background-color: var(--neutral-dark);
+    text-align: center;
+    padding: 2.5rem 2rem;
+}
+
+.page-banner h1 {
+    color: var(--primary-color);
+    margin-bottom: 0;
+}
+
+/* Inner page content wrapper — provides horizontal padding and modest top gap
+   below the page banner */
 .page-content {
-    padding: 2.5rem 2rem 2rem;
+    padding: 2rem 2rem 2rem;
     max-width: 1100px;
     margin: 0 auto;
 }
