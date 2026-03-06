@@ -122,6 +122,11 @@ table {
 .logo {
   height: 120px;
   max-width: 90%;
+  transition: transform 0.3s ease;
+}
+
+.logo-container:hover .logo {
+  transform: scale(1.04);
 }
 
 /* Typography improvements */
@@ -256,6 +261,7 @@ h3 .fas, h3 .far {
 /* Navigation styles */
 .main-nav a.active {
     color: var(--accent-color);
+    background-color: rgba(211, 84, 0, 0.1);
 }
 
 .main-nav a.active::after {
@@ -284,14 +290,18 @@ h3 .fas, h3 .far {
     color: var(--text-color);
     text-decoration: none;
     font-weight: 500;
-    padding: 0.5rem 0;
+    padding: 0.4rem 0.75rem;
     display: inline-block;
     position: relative;
+    border-radius: 4px;
+    letter-spacing: 0.03em;
+    transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 /* Navigation hover */
 .main-nav a:hover {
     color: var(--accent-color);
+    background-color: rgba(211, 84, 0, 0.06);
 }
 
 /* Underline animation effect */
@@ -331,11 +341,15 @@ body {
     color: var(--text-color);
 }
 
- header {
+header {
     background-color: var(--primary-color);
     color: var(--text-color);
     padding: 1rem;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
 main {
@@ -807,10 +821,6 @@ button.button:hover {
 	font-size: 2rem;
     }
 
-    main {
-	padding: 1.5rem;
-    }
-
     .main-nav ul {
 	gap: 0.8rem;
     }
@@ -824,10 +834,6 @@ button.button:hover {
 
     header h1 {
 	font-size: 1.75rem;
-    }
-
-    main {
-	padding: 1rem;
     }
 
     h1 {
