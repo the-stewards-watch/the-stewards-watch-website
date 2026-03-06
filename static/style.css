@@ -487,17 +487,24 @@ footer {
     margin-top: 2rem;
 }
 
-/* Inner page banner — dark slate strip with cream h1, sits below the header
-   on About / Services / Contact (homepage uses the full hero instead) */
+/* Inner page banner — same image/overlay as the homepage hero, shorter height.
+   About / Services / Contact use this; homepage uses the full .hero instead. */
 .page-banner {
-    background-color: var(--neutral-dark);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/static/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     text-align: center;
-    padding: 2.5rem 2rem;
+    padding: 3rem 2rem;
 }
 
 .page-banner h1 {
-    color: var(--primary-color);
+    color: white;
     margin-bottom: 0;
+}
+
+.page-banner h1:after {
+    background: white;
 }
 
 /* Inner page content wrapper — provides horizontal padding and modest top gap
