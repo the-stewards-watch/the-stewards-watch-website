@@ -115,12 +115,12 @@ table {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.5rem;
-  margin-top: 1rem;
+  margin-bottom: 0.35rem;
+  margin-top: 0.35rem;
 }
 
 .logo {
-  height: 120px;
+  height: 80px;
   max-width: 90%;
   transition: transform 0.3s ease;
 }
@@ -254,7 +254,7 @@ h3 .fas, h3 .far {
     }
 
     .logo {
-	height: 75px;
+	height: 56px;
     }
 }
 
