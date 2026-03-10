@@ -1001,6 +1001,72 @@ button.button:hover {
   border-bottom: none;
 }
 
+/* Testimonial pull quote — homepage highlight band */
+.testimonial-highlight {
+  background-color: var(--neutral-dark);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-highlight::before {
+  content: "\201C";
+  font-family: "Georgia", serif;
+  font-size: 12rem;
+  line-height: 1;
+  color: var(--accent-color);
+  opacity: 0.18;
+  position: absolute;
+  top: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  user-select: none;
+}
+
+.testimonial-highlight blockquote {
+  max-width: 700px;
+  margin: 0 auto 1.75rem;
+  padding: 0;
+  position: relative;
+}
+
+.testimonial-highlight blockquote p {
+  font-family: "Georgia", serif;
+  font-size: 1.45rem;
+  font-style: italic;
+  line-height: 1.6;
+  color: white;
+  margin-bottom: 1.25rem;
+}
+
+.testimonial-highlight blockquote cite {
+  display: block;
+  font-size: 0.95rem;
+  font-style: normal;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.testimonial-highlight .button--ghost {
+  border-color: rgba(255,255,255,0.5);
+  margin-top: 0;
+}
+
+.testimonial-highlight .button--ghost:hover {
+  border-color: white;
+}
+
+@media (max-width: 767px) {
+  .testimonial-highlight blockquote p {
+    font-size: 1.15rem;
+  }
+}
+
 /* Keyboard focus styles — visible focus rings for accessibility */
 a:focus-visible,
 button:focus-visible {
