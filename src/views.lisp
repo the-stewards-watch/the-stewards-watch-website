@@ -69,3 +69,10 @@
 			  :sent sent
 			  :error error
 			  :now (local-time:format-timestring nil (local-time:now) :format '(:year))))
+
+(defparameter +404-template+ (djula:compile-template* "404.html"))
+
+(defun render-404-page ()
+  (djula:render-template* +404-template+ nil
+			  :title "The Steward"
+			  :now (local-time:format-timestring nil (local-time:now) :format '(:year))))

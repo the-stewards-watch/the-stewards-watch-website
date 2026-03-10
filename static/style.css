@@ -1067,6 +1067,19 @@ button.button:hover {
   }
 }
 
+/* 404 page */
+.not-found {
+  padding: 5rem 2rem;
+}
+
+.not-found-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
 /* Keyboard focus styles — visible focus rings for accessibility */
 a:focus-visible,
 button:focus-visible {
