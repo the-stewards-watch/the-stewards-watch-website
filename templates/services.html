@@ -1,40 +1,96 @@
 {% extends "layout.html" %}
 
-{% block title %}Our Services | The Steward's Watch{% endblock %}
-{% block meta_description %}Home security, pet care, plant maintenance, and property monitoring — explore professional house sitting services from The Steward's Watch in Putnam &amp; Dutchess Counties, NY.{% endblock %}
-{% block og_title %}Our Services | The Steward's Watch{% endblock %}
-{% block og_description %}Professional house sitting services including home security, pet care, plant maintenance, and more across Putnam &amp; Dutchess Counties, NY.{% endblock %}
+{% block title %}Services &amp; Rates | The Steward's Watch{% endblock %}
+{% block meta_description %}In-home pet care, dog walking, overnight house sitting, and more — professional services with clear, upfront rates. Serving Putnam &amp; Dutchess Counties, NY.{% endblock %}
+{% block og_title %}Services &amp; Rates | The Steward's Watch{% endblock %}
+{% block og_description %}In-home pet care, dog walking, overnight house sitting, and more — professional services with clear, upfront rates. Serving Putnam &amp; Dutchess Counties, NY.{% endblock %}
 
 {% block content %}
-<h2>Professional House Sitting Services</h2>
-<p>We provide reliable care for your home while you're away, giving you peace of mind.</p>
+<h2>Services &amp; Rates</h2>
+<p>All services are provided in-home within Putnam &amp; Dutchess Counties. Your pets stay in their own environment — comfortable, familiar, and stress-free.</p>
 
 <div class="services-grid">
+
   <div class="service-item">
-    <i class="fas fa-shield-alt service-icon"></i>
-    <h3>Home Security</h3>
-    <p>Regular presence in your home deters potential break-ins. We collect mail, adjust lighting, and ensure your home looks lived in.</p>
+    <i class="fas fa-door-open service-icon"></i>
+    <h3>Drop-In Visit</h3>
+    <p>Up to one hour in your home. Includes feeding, a walk, playtime, fresh water, a plant check, and mail collection.</p>
+    <div class="service-price">$35 <span class="service-price-unit">/ visit</span></div>
+    <div class="service-price-note">+$30 for each additional hour</div>
   </div>
 
   <div class="service-item">
-    <i class="fas fa-paw service-icon"></i>
-    <h3>Pet Care</h3>
-    <p>Your furry, feathered, or scaled friends receive attentive care in their familiar environment. We follow your detailed care instructions.</p>
+    <i class="fas fa-walking service-icon"></i>
+    <h3>Dog Walk</h3>
+    <p>A dedicated 30-minute walk for your dog. Can be booked as a standalone service without a full drop-in visit.</p>
+    <div class="service-price">$25 <span class="service-price-unit">/ walk</span></div>
+  </div>
+
+  <div class="service-item">
+    <i class="fas fa-moon service-icon"></i>
+    <h3>Overnight House Sitting</h3>
+    <p>We stay at your home from approximately 7pm to 7am. Includes all pet care and home security — mail, lighting, and keeping your home looking occupied.</p>
+    <div class="service-price">$105 <span class="service-price-unit">/ night</span></div>
+  </div>
+
+  <div class="service-item">
+    <i class="fas fa-clock service-icon"></i>
+    <h3>24-Hour In-Home Care</h3>
+    <p>Full-day, full-night presence in your home. The most comprehensive option for pets that need continuous company or for longer trips.</p>
+    <div class="service-price">$155 <span class="service-price-unit">/ day</span></div>
+  </div>
+
+  <div class="service-item">
+    <i class="fas fa-calendar-week service-icon"></i>
+    <h3>Weekly Rate</h3>
+    <p>Seven consecutive nights of overnight house sitting. Includes all pet care and home maintenance throughout your trip — the best value for extended travel.</p>
+    <div class="service-price">$875 <span class="service-price-unit">/ week</span></div>
+    <div class="service-price-note">7 overnight stays</div>
   </div>
 
   <div class="service-item">
     <i class="fas fa-leaf service-icon"></i>
-    <h3>Plant Maintenance</h3>
-    <p>Your indoor and outdoor plants will be watered and cared for according to their specific needs.</p>
+    <h3>Home &amp; Plant Care</h3>
+    <p>Regular check-ins to water plants, collect mail, adjust lighting, and keep an eye on the property. Available for households without pets.</p>
+    <div class="service-price">$35 <span class="service-price-unit">/ visit</span></div>
   </div>
 
-  <div class="service-item">
-    <i class="fas fa-tools service-icon"></i>
-    <h3>Maintenance</h3>
-    <p>We handle basic home maintenance and are alert to any potential issues that may arise during your absence.</p>
-  </div>
 </div>
 
-<p class="cta">Contact us for a free consultation about your specific house sitting needs.</p>
-<a class="button" href="/contact">Get Started</a>
+<!-- Add-Ons -->
+<section class="addons-section">
+  <h2>Add-Ons</h2>
+  <p>Any of the following can be added to any visit or stay:</p>
+  <table class="addons-table">
+    <thead>
+      <tr>
+        <th>Add-On</th>
+        <th>Additional Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Add-On">Puppy care (under 1 year)</td>
+        <td data-label="Additional Cost">+$10 / visit</td>
+      </tr>
+      <tr>
+        <td data-label="Add-On">Senior pet or special needs care</td>
+        <td data-label="Additional Cost">+$10 / visit</td>
+      </tr>
+      <tr>
+        <td data-label="Add-On">Each additional pet</td>
+        <td data-label="Additional Cost">+$10 / visit</td>
+      </tr>
+      <tr>
+        <td data-label="Add-On">Medication administration</td>
+        <td data-label="Additional Cost">+$5–10 / dose</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<p class="travel-note"><i class="fas fa-map-marker-alt"></i> A travel surcharge may apply for homes outside our primary service area — we'll discuss this at your Meet &amp; Greet.</p>
+
+<p class="cta">Not sure which option fits your situation? We're happy to talk it through.</p>
+<a class="button" href="/contact">Get in Touch</a>
 {% endblock %}
