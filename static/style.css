@@ -321,13 +321,60 @@ h3 .fas, h3 .far {
     width: 100%;
 }
 
+/* Hamburger toggle button — hidden on desktop */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin: 0 auto;
+}
+
+.nav-toggle-bar {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background-color: var(--text-color);
+    border-radius: 2px;
+    margin: 5px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animate bars into X when open */
+.nav-toggle.open .nav-toggle-bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.nav-toggle.open .nav-toggle-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.open .nav-toggle-bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
 /* Responsive navigation for smaller screen */
 @media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .main-nav {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+    }
+
+    .main-nav.open {
+        max-height: 300px;
+    }
+
     .main-nav ul {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .main-nav li {
         margin: 0.5rem 0;
     }

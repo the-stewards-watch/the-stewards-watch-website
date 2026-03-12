@@ -1,6 +1,26 @@
 (function () {
   'use strict';
 
+  // Mobile hamburger toggle
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.getElementById('main-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', function () {
+      var isOpen = nav.classList.toggle('open');
+      toggle.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close menu when a link is tapped
+    nav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        nav.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
   // Elements to animate on scroll
   var selectors = [
     '.service-item',

@@ -19,18 +19,30 @@
            (name    (get-form-param params "name"))
            (email   (get-form-param params "email"))
            (phone   (get-form-param params "phone"))
-           (message (get-form-param params "message")))
-      (if (and name email message
-               (> (length name) 0)
-               (> (length email) 0)
-               (> (length message) 0))
-          (handler-case
-              (progn
-                (send-contact-email name email phone message)
-                (tiny-routes:ok (render-contact-page :sent t)))
-            (error ()
-              (tiny-routes:ok (render-contact-page :error t))))
-          (tiny-routes:ok (render-contact-page :error t)))))
+           (message (get-form-param params "message"))
+           (honeypot (get-form-param params "website")))
+      ;; If the honeypot field is filled in, silently pretend success (bot trap)
+      (if (and honeypot (> (length honeypot) 0))
+          (tiny-routes:ok (render-contact-page :sent t))
+          (if (and name email message
+                   (> (length name) 0)
+                   (> (length email) 0)
+                   (> (length message) 0))
+              (handler-case
+                  (progn
+                    (send-contact-email name email phone message)
+                    (tiny-routes:ok (render-contact-page :sent t)))
+                (error ()
+                  (tiny-routes:ok (render-contact-page :error t
+                                                       :form-name name
+                                                       :form-email email
+                                                       :form-phone phone
+                                                       :form-message message))))
+              (tiny-routes:ok (render-contact-page :error t
+                                                   :form-name name
+                                                   :form-email email
+                                                   :form-phone phone
+                                                   :form-message message))))))
   (tiny-routes:define-any "*" ()
     (tiny-routes:not-found (render-404-page))))
 
