@@ -1,15 +1,19 @@
+;;;; src/app.lisp
 (in-package :the-steward-website)
 
 (defvar *http-server* nil
   "The Application's HTTP server.")
+(defvar *app-root* (asdf:system-source-directory :the-steward-website))
 
-;;; Handlers
+;; Set up  Djula template directory
+(djula:add-template-directory (asdf:system-relative-pathname "the-steward-website" "templates/"))
 
-(tiny-routes:define-routes *app-routes*
-  (tiny-routes:define-get "/" () (tiny-routes:ok "alive"))
-  (tiny-routes:define-any "*" () (tiny-routes:not-found "not found")))
+(defun build-app ()
+  (lack:builder :session
+		(:static :path "/static/"
+			 :root (merge-pathnames #p"static/" *app-root*))
+		#'dispatch-routes))
 
-;;; App control functions
 
 (defun stop-http-server ()
   (when *http-server*
@@ -27,4 +31,4 @@
   (stop-http-server))
 
 (defun start-app (&key (host "127.0.0.1") (port 8080) (debug t))
-  (start-http-server *app-routes* :host host :port port :debug debug ))
+  (start-http-server (build-app) :host host :port port :debug debug ))

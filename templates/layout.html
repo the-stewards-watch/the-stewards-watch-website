@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+	<div class="logo-container">
+	  <img src="/static/images/logo.png" alt="The Steward - Professional House Sitting" class="logo">
+	</div>
+	<nav class="main-nav">
+	  <ul>
+	    <li><a href="/" {% ifequal active "home" %}class="active"{% endifequal %}>Home</a></li>
+	    <li><a href="/services" {% ifequal active "services" %}class="active"{% endifequal %}>Services</a></li>
+	    <li><a href="/about" {% ifequal active "about" %}class="active"{% endifequal %}>About</a></li>
+	    <li><a href="/testimonials" {% ifequal active "testimonials" %}class="active"{% endifequal %}>Testimonials</a></li>
+	    <li><a href="/contact" {% ifequal active "contact" %}class="active"{% endifequal %}>Contact</a></li>
+	  </ul>
+	</nav>
+      </div>
+    </header>
+    <main class="container">
+      {% block content %}{% endblock %}
+    </main>
+    <footer>
+      <div class="container">
+	<div class="footer-content">
+	  <p>&copy; {{ now }} The Steward - Professional House Sitting Services</p>
+	  <div class="footer-links">
+	    <a href="/about">About</a>
+	    <a href="/services">Services</a>
+	    <a href="/contact">Contact</a>
+	  </div>
+	</div>
+      </div>
+    </footer>
+  </body>
+</html>
+

@@ -12,6 +12,9 @@
 	       #:cl-json)
   :components ((:module "src"
 		:components ((:file "package")
-			     (:file "app" :depends-on ("package")))))
+			     (:file "app")
+			     (:file "routes")
+			     (:file "views"))))
   :build-operation "program-op"
-  :build-pathname "the-steward-website")
+  :build-pathname "the-steward-website"
+  :entry-point "the-steward-website:start-app")
