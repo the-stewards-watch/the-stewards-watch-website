@@ -32,7 +32,7 @@
               (tiny-routes:ok (render-contact-page :error t))))
           (tiny-routes:ok (render-contact-page :error t)))))
   (tiny-routes:define-any "*" ()
-    (tiny-routes:not-found "not found")))
+    (tiny-routes:not-found (render-404-page))))
 
 ;; Route Dispatcher
 (defun dispatch-routes (env)
