@@ -2,9 +2,7 @@
 
 {% block title %}Professional House Sitting Services | The Steward's Watch{% endblock %}
 
-{% block content %}
-</main> <!-- Close the main tag that was opened in layout.html -->
-
+{% block hero %}
 <div class="hero">
   <div class="hero-content">
     <h2>Your home cared for while you're away</h2>
@@ -12,8 +10,9 @@
     <a class="button" href="/contact">Contact Us</a>
   </div>
 </div>
+{% endblock %}
 
-<main> <!-- Reopen the main tag for the rest of the content -->
+{% block content %}
 
   <!-- How It Works -->
   <section class="how-it-works">
