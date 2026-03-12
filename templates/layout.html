@@ -2,15 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Meta Tags -->
     <title>{% block title %}{{ title }}{% endblock %}</title>
-    <meta name="description" content="{% block meta_description %}The Steward's Watch provides professional, owner-operated house sitting services across Putnam and Dutchess Counties, NY. Home security, pet care, plant maintenance, and more.{% endblock %}">
+    <meta name="description" content="{% block meta_description %}Owner-operated pet care and house sitting in Putnam &amp; Dutchess Counties, NY. In-home visits, dog walks, overnight stays, and property care — always the same trusted sitter.{% endblock %}">
 
     <!-- Open Graph / Social Media Tags -->
-    <meta property="og:title" content="{% block og_title %}The Steward's Watch - Professional House Sitting{% endblock %}">
-    <meta property="og:description" content="{% block og_description %}Owner-operated house sitting in Putnam &amp; Dutchess Counties, NY. Your home cared for while you're away.{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}The Steward's Watch — Pet Care &amp; House Sitting{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Owner-operated pet care and house sitting in Putnam &amp; Dutchess Counties, NY. Your home and pets cared for while you're away.{% endblock %}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://thestewardswatch.com">
     <meta property="og:image" content="https://thestewardswatch.com/static/images/logo.png">
@@ -24,21 +24,21 @@
     <header>
       <div class="container">
 	<div class="logo-container">
-	  <img src="/static/images/logo.svg" alt="The Steward's Watch - Professional House Sitting" class="logo">
+	  <a href="/"><img src="/static/images/logo.svg" alt="The Steward's Watch - Pet Care &amp; House Sitting" class="logo"></a>
 	</div>
 	<nav class="main-nav">
 	  <ul>
 	    <li><a href="/" {% ifequal active "home" %}class="active"{% endifequal %}>Home</a></li>
 	    <li><a href="/services" {% ifequal active "services" %}class="active"{% endifequal %}>Services</a></li>
 	    <li><a href="/about" {% ifequal active "about" %}class="active"{% endifequal %}>About</a></li>
-	    <li><a href="/testimonials" {% ifequal active "testimonials" %}class="active"{% endifequal %}>Testimonials</a></li>
 	    <li><a href="/contact" {% ifequal active "contact" %}class="active"{% endifequal %}>Contact</a></li>
 	  </ul>
 	</nav>
       </div>
     </header>
     {% block hero %}{% endblock %}
-    <main class="container">
+    {% block page_banner %}{% endblock %}
+    <main>
       {% block content %}{% endblock %}
     </main>
     <footer>
@@ -61,6 +61,7 @@
 	</div>
       </div>
     </footer>
+    <script src="/static/effects.js" defer></script>
     <!-- Schema.org markup for local business -->
     <script type="application/ld+json">
       {
@@ -93,7 +94,7 @@
 	      }
 	  ],
 	  "priceRange": "$$",
-	  "description": "Owner-operated house sitting services in Putnam and Dutchess Counties, NY. Home security, pet care, plant maintenance, and property monitoring."
+	  "description": "Owner-operated pet care and house sitting in Putnam and Dutchess Counties, NY. In-home visits, dog walks, overnight stays, and property care."
       }
     </script>
   </body>
