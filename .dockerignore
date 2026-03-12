@@ -1,0 +1,10 @@
+# Git history — not needed in the image
+.git
+
+# Compiled Lisp bytecode — rebuilt inside the container
+*.fasl
+**/*.fasl
+
+# Local secrets — must never end up in an image layer
+.env
+.env.local

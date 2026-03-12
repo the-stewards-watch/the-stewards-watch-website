@@ -4,12 +4,14 @@
   :license "GPL"
   :version "0.1.0"
   :depends-on (#:clack
+	       #:woo
+	       #:lack/request
 	       #:tiny-routes
 	       #:djula
-	       #:mito
-	       #:postmodern
+	       #:local-time
 	       #:alexandria
-	       #:cl-json)
+	       #:cl-json
+	       #:dexador)
   :components ((:module "src"
 		:components ((:file "package")
 			     (:file "app")

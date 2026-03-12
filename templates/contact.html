@@ -1,18 +1,29 @@
 {% extends "layout.html" %}
 
 {% block title %}Contact Us | The Steward's Watch{% endblock %}
-{% block meta_description %}Get in touch with The Steward's Watch. Call (845) 803-1769 or email us to discuss your house sitting needs in Putnam &amp; Dutchess Counties, NY.{% endblock %}
+{% block meta_description %}Get in touch with The Steward's Watch. Call (845) 682-1411 or email us to discuss your house sitting needs in Putnam &amp; Dutchess Counties, NY.{% endblock %}
 {% block og_title %}Contact The Steward's Watch{% endblock %}
-{% block og_description %}Reach out to discuss your house sitting needs. Call (845) 803-1769 or email thestewardswatch@gmail.com — available 7 days a week.{% endblock %}
+{% block og_description %}Reach out to discuss your house sitting needs. Call (845) 682-1411 or email thestewardswatch@gmail.com — available 7 days a week.{% endblock %}
 
 {% block content %}
 <h2>Get in Touch</h2>
 <p>We'd love to discuss how we can help with your house sitting needs.</p>
 
+{% if sent %}
+<div class="form-notice form-notice--success">
+  <i class="fas fa-check-circle"></i> Message sent! We'll get back to you within 24 hours.
+</div>
+{% endif %}
+{% if error %}
+<div class="form-notice form-notice--error">
+  <i class="fas fa-exclamation-circle"></i> Something went wrong sending your message. Please call us at <a href="tel:+18456821411">(845) 682-1411</a> or email <a href="mailto:thestewardswatch@gmail.com">thestewardswatch@gmail.com</a> directly.
+</div>
+{% endif %}
+
 <div class="contact-container">
   <div class="contact-info">
     <h3><i class="fas fa-address-card"></i> Contact Information</h3>
-    <p><i class="fas fa-phone"></i> <strong>Phone:</strong> <a href="tel:+18458031769">(845) 803-1769</a></p>
+    <p><i class="fas fa-phone"></i> <strong>Phone:</strong> <a href="tel:+18456821411">(845) 682-1411</a></p>
     <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:thestewardswatch@gmail.com">thestewardswatch@gmail.com</a></p>
     <p><i class="far fa-clock"></i> <strong>Hours:</strong> Available 7 days a week</p>
   </div>
@@ -30,8 +41,26 @@
 
   <div class="contact-form">
     <h3>Send Us a Message</h3>
-    <p>Reach out directly and we'll get back to you within 24 hours.</p>
-    <a class="button" href="mailto:thestewardswatch@gmail.com?subject=House%20Sitting%20Inquiry">Send Us an Email</a>
+    <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+    <form class="inquiry-form" action="/contact" method="POST">
+      <div class="form-group">
+        <label for="name">Your Name <span class="required">*</span></label>
+        <input type="text" id="name" name="name" required placeholder="Jane Smith">
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address <span class="required">*</span></label>
+        <input type="email" id="email" name="email" required placeholder="jane@example.com">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="(845) 555-0100">
+      </div>
+      <div class="form-group">
+        <label for="message">Message <span class="required">*</span></label>
+        <textarea id="message" name="message" rows="5" required placeholder="Tell us about your house sitting needs — dates, pets, anything helpful."></textarea>
+      </div>
+      <button type="submit" class="button">Send Message</button>
+    </form>
   </div>
 </div>
 {% endblock %}
