@@ -1094,6 +1094,53 @@ button:focus-visible {
   border-color: var(--accent-color);
 }
 
+/* Payment methods section */
+.payment-section {
+  margin: 3rem 0 2rem;
+}
+
+.payment-methods {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 600px;
+  margin: 1.5rem auto 0;
+}
+
+.payment-method {
+  flex: 1;
+  min-width: 200px;
+  max-width: 260px;
+  background-color: var(--neutral-light);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.payment-method h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.payment-method p {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.payment-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.75rem;
+  margin-right: 0;
+}
+
+.zelle-qr {
+  width: 140px;
+  height: 140px;
+  margin-top: 0.75rem;
+}
+
 /* Travel surcharge note */
 .travel-note {
   font-size: 0.95rem;
