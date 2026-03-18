@@ -27,7 +27,12 @@
 	<div class="logo-container">
 	  <a href="/"><img src="/static/images/logo.svg" alt="The Steward's Watch - Pet Care &amp; House Sitting" class="logo"></a>
 	</div>
-	<nav class="main-nav">
+	<button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+	  <span class="nav-toggle-bar"></span>
+	  <span class="nav-toggle-bar"></span>
+	  <span class="nav-toggle-bar"></span>
+	</button>
+	<nav class="main-nav" id="main-nav">
 	  <ul>
 	    <li><a href="/" {% ifequal active "home" %}class="active"{% endifequal %}>Home</a></li>
 	    <li><a href="/services" {% ifequal active "services" %}class="active"{% endifequal %}>Services</a></li>
