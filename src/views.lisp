@@ -62,12 +62,16 @@
 			  :active "testimonials"
 			  :now (local-time:format-timestring nil (local-time:now) :format '(:year))))
 
-(defun render-contact-page (&key sent error)
+(defun render-contact-page (&key sent error form-name form-email form-phone form-message)
   (djula:render-template* +contact-template+ nil
 			  :title "The Steward"
 			  :active "contact"
 			  :sent sent
 			  :error error
+			  :form_name (or form-name "")
+			  :form_email (or form-email "")
+			  :form_phone (or form-phone "")
+			  :form_message (or form-message "")
 			  :now (local-time:format-timestring nil (local-time:now) :format '(:year))))
 
 (defparameter +404-template+ (djula:compile-template* "404.html"))
