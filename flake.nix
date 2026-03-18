@@ -16,12 +16,14 @@
           packages = [
             pkgs.sbcl
             pkgs.openssl
+            pkgs.libev
             pkgs.gh
           ];
 
           # System libraries needed by Lisp packages (dexador, woo, etc.)
           LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
             pkgs.openssl
+            pkgs.libev
           ];
 
           shellHook = ''
