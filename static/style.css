@@ -740,6 +740,12 @@ footer {
     border-bottom: none;
 }
 
+.service-areas-note {
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 0.5rem;
+}
+
 .contact-form {
     background-color: var(--neutral-light);
     padding: 1.5rem;
