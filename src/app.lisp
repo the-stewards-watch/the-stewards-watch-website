@@ -39,18 +39,24 @@
 (defun stop-app ()
   (stop-http-server))
 
+(defvar *shutdown-file* (or (uiop:getenv "SHUTDOWN_FILE") "/tmp/.shutdown-requested")
+  "File created by entrypoint.sh to signal shutdown request.")
+
+(defun shutdown-requested-p ()
+  "Check if the shutdown file exists."
+  (probe-file *shutdown-file*))
+
 (defun main ()
   "Production entry point used by Docker/systemd.
-Starts the server, installs a SIGTERM handler for graceful shutdown,
-then blocks so the process stays alive."
+Starts the server, polls for shutdown signal, then exits gracefully."
   (start-app)
-  (sb-sys:enable-interrupt sb-unix:sigterm
-    (lambda (signal code scp)
-      (declare (ignore signal code scp))
-      (format t "~&Received SIGTERM — shutting down.~%")
+  (loop
+    (when (shutdown-requested-p)
+      (format t "~&Shutdown requested — shutting down.~%")
+      (force-output)
       (stop-app)
-      (sb-ext:exit 0)))
-  (loop (sleep 60)))
+      (return))
+    (sleep 1)))
 
 (defun start-app (&key
 		    (host (or (uiop:getenv "HOST") "0.0.0.0"))
