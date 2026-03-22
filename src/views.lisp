@@ -26,6 +26,45 @@
                   :content body)))
 
 ;; ---------------------------------------------------------------------------
+;; Services data (single source of truth)
+;; ---------------------------------------------------------------------------
+
+(defparameter *services*
+  '((:name "Drop-In Visit"
+     :icon "fa-door-open"
+     :short-desc "Up to one hour — feeding, walk, playtime, mail & more"
+     :description "Up to one hour in your home. Includes feeding, a walk, playtime, fresh water, plant care, and mail collection. Pets optional."
+     :price "$40"
+     :price-unit "/ visit"
+     :price-note nil)
+    (:name "Dog Walk"
+     :icon "fa-walking"
+     :short-desc "A dedicated 30-minute walk, bookable on its own"
+     :description "A dedicated 30-minute walk for your dog — nothing more, nothing less."
+     :price "$30"
+     :price-unit "/ walk"
+     :price-note nil)
+    (:name "Overnight Stay"
+     :icon "fa-moon"
+     :short-desc "Full pet care and home security overnight"
+     :description "We stay at your home overnight. Includes all pet care, mail, lighting, and keeping your home looking lived-in while you're away."
+     :price "$110"
+     :price-unit "/ night"
+     :price-note nil)
+    (:name "Weekly Stay"
+     :icon "fa-calendar-week"
+     :short-desc "Six nights of care — best value for extended trips"
+     :description "Six consecutive nights of overnight care — the best value for extended travel."
+     :price "$550"
+     :price-unit "/ week"
+     :price-note "Save $110 — one night free")))
+
+(defparameter *addons*
+  '((:name "Each additional pet" :price "+$15")
+    (:name "Puppy (under 1 year) or senior pet" :price "+$15")
+    (:name "Medication administration" :price "Discussed at Meet & Greet")))
+
+;; ---------------------------------------------------------------------------
 ;; Template definitions
 ;; ---------------------------------------------------------------------------
 
@@ -42,12 +81,15 @@
   (djula:render-template* +index-template+ nil
 			  :title "The Steward"
 			  :active "home"
+			  :services *services*
 			  :now (local-time:format-timestring nil (local-time:now) :format '(:year))))
 
 (defun render-services-page ()
   (djula:render-template* +services-template+ nil
 			  :title "The Steward"
 			  :active "services"
+			  :services *services*
+			  :addons *addons*
 			  :now (local-time:format-timestring nil (local-time:now) :format '(:year))))
 
 (defun render-about-page ()
