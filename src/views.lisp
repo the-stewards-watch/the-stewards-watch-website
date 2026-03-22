@@ -34,34 +34,34 @@
      :icon "fa-door-open"
      :short-desc "Up to one hour — feeding, walk, playtime, mail & more"
      :description "Up to one hour in your home. Includes feeding, a walk, playtime, fresh water, plant care, and mail collection. Pets optional."
-     :price "$40"
+     :price "$25"
      :price-unit "/ visit"
      :price-note nil)
     (:name "Dog Walk"
      :icon "fa-walking"
      :short-desc "A dedicated 30-minute walk, bookable on its own"
      :description "A dedicated 30-minute walk for your dog — nothing more, nothing less."
-     :price "$30"
+     :price "$20"
      :price-unit "/ walk"
      :price-note nil)
     (:name "Overnight Stay"
      :icon "fa-moon"
      :short-desc "Full pet care and home security overnight"
      :description "We stay at your home overnight. Includes all pet care, mail, lighting, and keeping your home looking lived-in while you're away."
-     :price "$110"
+     :price "$85"
      :price-unit "/ night"
      :price-note nil)
     (:name "Weekly Stay"
      :icon "fa-calendar-week"
      :short-desc "Six nights of care — best value for extended trips"
      :description "Six consecutive nights of overnight care — the best value for extended travel."
-     :price "$550"
+     :price "$450"
      :price-unit "/ week"
-     :price-note "Save $110 — one night free")))
+     :price-note "Save $60 vs. nightly rate")))
 
 (defparameter *addons*
-  '((:name "Each additional pet" :price "+$15")
-    (:name "Puppy (under 1 year) or senior pet" :price "+$15")
+  '((:name "Each additional pet" :price "+$8")
+    (:name "Puppy (under 1 year) or senior pet" :price "+$8")
     (:name "Medication administration" :price "Discussed at Meet & Greet")))
 
 ;; ---------------------------------------------------------------------------
