@@ -63,7 +63,8 @@
   '((:name "Each additional pet" :price "+$8")
     (:name "Puppy (under 1 year) or senior pet" :price "+$8")
     (:name "Medication administration" :price "Discussed at Meet & Greet")
-    (:name "Last-minute booking (under 48 hrs notice)" :price "+$15")))
+    (:name "Last-minute booking (under 48 hrs notice)" :price "+$15")
+    (:name "Major holiday surcharge" :price "+$15")))
 
 ;; ---------------------------------------------------------------------------
 ;; Template definitions
