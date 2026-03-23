@@ -13,6 +13,8 @@
     (tiny-routes:ok (render-testimonials-page)))
   (tiny-routes:define-get "/contact" ()
     (tiny-routes:ok (render-contact-page)))
+  (tiny-routes:define-get "/privacy" ()
+    (tiny-routes:ok (render-privacy-page)))
   (tiny-routes:define-post "/contact" (request)
     (let* ((req    (lack/request:make-request request))
            (params (lack/request:request-body-parameters req))
