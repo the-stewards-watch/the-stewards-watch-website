@@ -1,20 +1,20 @@
-# The Steward Website
+# The Steward's Watch
 
-A small business website built with Common Lisp to promote and manage a local home sitting service.
+A small business website built with Common Lisp for a local home and pet sitting service in the Hudson Valley, NY.
 
 ## Overview
 
-The Steward Website is a web application that provides an online presence for a small, trusted home sitting business. It features service descriptions, a contact form, an availability calendar, and basic admin tools.
+The Steward's Watch is a web application that provides an online presence for a trusted home and pet sitting business. It features service descriptions, testimonials, and a contact form.
 
 Built using Common Lisp with a focus on simplicity, speed, and maintainability.
 
 ## Features
 
-- Responsive landing page
+- Responsive, mobile-first design
 - Service overview with pricing
-- Secure contact form
-- Availability calendar (static or dynamic)
-- Admin login for viewing inquiries (optional)
+- Contact form (powered by Resend)
+- About and testimonials pages
+- Privacy policy
 
 ## Local Development
 
@@ -27,8 +27,8 @@ Built using Common Lisp with a focus on simplicity, speed, and maintainability.
 ### Setup
 
 ```bash
-git clone https://github.com/matthew-bestard/the-steward-website.git
-cd the-steward-website
+git clone https://github.com/the-stewards-watch/the-stewards-watch-website.git
+cd the-stewards-watch-website
 cp .env.example .env   # fill in your Resend API key and email addresses
 ```
 
