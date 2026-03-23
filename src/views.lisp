@@ -30,39 +30,41 @@
 ;; ---------------------------------------------------------------------------
 
 (defparameter *services*
-  '((:name "Drop-In Visit"
-     :icon "fa-door-open"
-     :short-desc "Up to one hour — feeding, walk, playtime, mail & more"
-     :description "Up to one hour in your home. Includes feeding, a walk, playtime, fresh water, plant care, and mail collection. Pets optional."
-     :price "$40"
+  '((:name "Home Check"
+     :icon "fa-house-user"
+     :short-desc "A quick property check while you're away — no pets needed"
+     :description "A 15–30 minute check on your home. We'll collect mail and packages, water plants, adjust lights and blinds, and make sure everything is secure."
+     :price "$20"
      :price-unit "/ visit"
      :price-note nil)
     (:name "Dog Walk"
      :icon "fa-walking"
      :short-desc "A dedicated 30-minute walk, bookable on its own"
-     :description "A dedicated 30-minute walk for your dog — nothing more, nothing less."
-     :price "$30"
+     :description "A dedicated 30-minute walk for your dog, bookable any time on its own."
+     :price "$25"
      :price-unit "/ walk"
+     :price-note nil)
+    (:name "Drop-In Visit"
+     :icon "fa-door-open"
+     :short-desc "Up to one hour — feeding, walks, playtime, mail & more"
+     :description "Up to one hour in your home. Feeding, fresh water, a walk or playtime, plant care, and mail collection — all included. We care for dogs, cats, and other pets."
+     :price "$35"
+     :price-unit "/ visit"
      :price-note nil)
     (:name "Overnight Stay"
      :icon "fa-moon"
      :short-desc "Full pet care and home security overnight"
      :description "We stay at your home overnight. Includes all pet care, mail, lighting, and keeping your home looking lived-in while you're away."
-     :price "$110"
+     :price "$80"
      :price-unit "/ night"
-     :price-note nil)
-    (:name "Weekly Stay"
-     :icon "fa-calendar-week"
-     :short-desc "Six nights of care — best value for extended trips"
-     :description "Six consecutive nights of overnight care — the best value for extended travel."
-     :price "$550"
-     :price-unit "/ week"
-     :price-note "Save $110 — one night free")))
+     :price-note "Book 6+ nights and get one night free")))
 
 (defparameter *addons*
-  '((:name "Each additional pet" :price "+$15")
-    (:name "Puppy (under 1 year) or senior pet" :price "+$15")
-    (:name "Medication administration" :price "Discussed at Meet & Greet")))
+  '((:name "Each additional pet" :price "+$10")
+    (:name "Puppy (under 1 year) or senior pet" :price "+$10")
+    (:name "Medication administration" :price "Discussed at Meet & Greet")
+    (:name "Last-minute booking (under 48 hrs notice)" :price "+$15")
+    (:name "Major holiday surcharge" :price "+$15")))
 
 ;; ---------------------------------------------------------------------------
 ;; Template definitions

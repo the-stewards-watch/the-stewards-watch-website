@@ -1,9 +1,9 @@
 {% extends "layout.html" %}
 
 {% block title %}Services &amp; Rates | The Steward's Watch{% endblock %}
-{% block meta_description %}In-home pet care, dog walking, overnight house sitting, and more — professional services with clear, upfront rates. Serving Putnam &amp; Dutchess Counties, NY.{% endblock %}
+{% block meta_description %}In-home pet care, dog walking, house sitting, and property checks — professional services with clear, upfront rates. Serving Putnam &amp; Dutchess Counties, NY.{% endblock %}
 {% block og_title %}Services &amp; Rates | The Steward's Watch{% endblock %}
-{% block og_description %}In-home pet care, dog walking, overnight house sitting, and more — professional services with clear, upfront rates. Serving Putnam &amp; Dutchess Counties, NY.{% endblock %}
+{% block og_description %}In-home pet care, dog walking, house sitting, and property checks — professional services with clear, upfront rates. Serving Putnam &amp; Dutchess Counties, NY.{% endblock %}
 {% block og_url %}https://thestewardswatch.com/services{% endblock %}
 {% block canonical %}https://thestewardswatch.com/services{% endblock %}
 
@@ -13,7 +13,7 @@
 
 {% block content %}
 <div class="page-content">
-<p>All services are provided in-home within Putnam &amp; Dutchess Counties. Your pets stay in their own environment — comfortable, familiar, and stress-free.</p>
+<p>All services are provided in your home within Putnam &amp; Dutchess Counties — whether you need pet care, property checks, or both.</p>
 
 <div class="services-grid">
 {% for service in services %}
@@ -66,7 +66,17 @@
   </div>
 </section>
 
-<p class="travel-note"><i class="fas fa-map-marker-alt"></i> A travel surcharge may apply for homes outside our primary service area — we'll discuss this at your Meet &amp; Greet.</p>
+<!-- Booking Policy -->
+<section class="policy-section">
+  <h2>Booking Policy</h2>
+  <ul class="policy-list">
+    <li>A <strong>25% deposit</strong> is required to secure your booking.</li>
+    <li>Cancellations made <strong>48 hours or more</strong> before the scheduled service receive a full refund of the deposit.</li>
+    <li>Cancellations within 48 hours are non-refundable.</li>
+    <li>No-shows are charged in full.</li>
+    <li>A travel surcharge may apply for homes outside our primary service area — we'll discuss this at your Meet &amp; Greet.</li>
+  </ul>
+</section>
 
 <p class="cta">Not sure which option fits your needs? We're happy to talk it through.</p>
 <a class="button" href="/contact">Get in Touch</a>
