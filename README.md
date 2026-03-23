@@ -68,7 +68,23 @@ you're running the app (see Local Development and Deployment sections above).
 
 ## Deployment (Docker)
 
-### Build and run
+### CI/CD: Automated Builds
+
+On every push to `main`, GitHub Actions automatically:
+1. Builds the Docker image
+2. Pushes to GitHub Container Registry
+
+**Pull the latest image:**
+```bash
+docker pull ghcr.io/the-stewards-watch/the-stewards-watch-website:latest
+```
+
+**Run it:**
+```bash
+docker run -p 8080:8080 --env-file .env ghcr.io/the-stewards-watch/the-stewards-watch-website:latest
+```
+
+### Build locally (optional)
 
 ```bash
 # Build the image
