@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block title %}Services &amp; Rates | The Steward's Watch{% endblock %}
+{% block meta_description %}In-home pet care, dog walking, house sitting, and property checks — professional services with clear, upfront rates. Serving Putnam &amp; Dutchess Counties, NY.{% endblock %}
+{% block og_title %}Services &amp; Rates | The Steward's Watch{% endblock %}
+{% block og_description %}In-home pet care, dog walking, house sitting, and property checks — professional services with clear, upfront rates. Serving Putnam &amp; Dutchess Counties, NY.{% endblock %}
+{% block og_url %}https://thestewardswatch.com/services{% endblock %}
+{% block canonical %}https://thestewardswatch.com/services{% endblock %}
+
+{% block page_banner %}
+<div class="page-banner"><h1>Services &amp; Rates</h1></div>
+{% endblock %}
+
+{% block content %}
+<div class="page-content">
+<p>All services are provided in your home within Putnam &amp; Dutchess Counties — whether you need pet care, property checks, or both.</p>
+
+<div class="services-grid">
+{% for service in services %}
+  <div class="service-item">
+    <i class="fas {{ service.icon }} service-icon"></i>
+    <h3>{{ service.name }}</h3>
+    <p>{{ service.description }}</p>
+    <div class="service-price">{{ service.price }} <span class="service-price-unit">{{ service.price-unit }}</span></div>
+    {% if service.price-note %}<div class="service-price-note">{{ service.price-note }}</div>{% endif %}
+  </div>
+{% endfor %}
+</div>
+
+<!-- Add-Ons -->
+<section class="addons-section">
+  <h2>Add-Ons</h2>
+  <table class="addons-table">
+    <thead>
+      <tr>
+        <th>Add-On</th>
+        <th>Additional Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+{% for addon in addons %}
+      <tr>
+        <td data-label="Add-On">{{ addon.name }}</td>
+        <td data-label="Additional Cost">{{ addon.price }}</td>
+      </tr>
+{% endfor %}
+    </tbody>
+  </table>
+</section>
+
+<!-- Payment Methods -->
+<section class="payment-section">
+  <h2>Payment</h2>
+  <p>Payment is due at the end of each service, or on an agreed upon schedule for recurring bookings. We accept:</p>
+  <div class="payment-methods">
+    <div class="payment-method">
+      <i class="fas fa-money-bill-wave payment-icon"></i>
+      <h3>Cash</h3>
+    </div>
+    <div class="payment-method">
+      <i class="fas fa-university payment-icon"></i>
+      <h3>Zelle</h3>
+      <p>Search for <strong>thestewardswatch</strong> in your banking app, or scan the QR code below.</p>
+      <img src="/static/images/zelle-qr.png" alt="Zelle QR code for The Steward's Watch LLC" class="zelle-qr">
+    </div>
+  </div>
+</section>
+
+<!-- Booking Policy -->
+<section class="policy-section">
+  <h2>Booking Policy</h2>
+  <ul class="policy-list">
+    <li>A <strong>25% deposit</strong> is required to secure your booking.</li>
+    <li>Cancellations made <strong>48 hours or more</strong> before the scheduled service receive a full refund of the deposit.</li>
+    <li>Cancellations within 48 hours are non-refundable.</li>
+    <li>No-shows are charged in full.</li>
+    <li>A travel surcharge may apply for homes outside our primary service area — we'll discuss this at your Meet &amp; Greet.</li>
+  </ul>
+</section>
+
+<p class="cta">Not sure which option fits your needs? We're happy to talk it through.</p>
+<a class="button" href="/contact">Get in Touch</a>
+</div>
+{% endblock %}

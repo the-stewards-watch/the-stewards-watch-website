@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block title %}Contact Us | The Steward's Watch{% endblock %}
+{% block meta_description %}Get in touch with The Steward's Watch. Call (845) 682-1411 or email us to discuss your house sitting needs in Putnam &amp; Dutchess Counties, NY.{% endblock %}
+{% block og_title %}Contact The Steward's Watch{% endblock %}
+{% block og_description %}Reach out to discuss your house sitting needs. Call (845) 682-1411 or email thestewardswatch@gmail.com — available 7 days a week.{% endblock %}
+{% block og_url %}https://thestewardswatch.com/contact{% endblock %}
+{% block canonical %}https://thestewardswatch.com/contact{% endblock %}
+
+{% block page_banner %}
+<div class="page-banner"><h1>Get in Touch</h1></div>
+{% endblock %}
+
+{% block content %}
+<div class="page-content">
+<p>We'd love to discuss how we can help with your pet care and house sitting needs.</p>
+
+{% if sent %}
+<div class="form-notice form-notice--success">
+  <i class="fas fa-check-circle"></i> Message sent! We'll get back to you within 24 hours.
+</div>
+{% endif %}
+{% if error %}
+<div class="form-notice form-notice--error">
+  <i class="fas fa-exclamation-circle"></i> Something went wrong sending your message. Please call us at <a href="tel:+18456821411">(845) 682-1411</a> or email <a href="mailto:thestewardswatch@gmail.com">thestewardswatch@gmail.com</a> directly.
+</div>
+{% endif %}
+
+<div class="contact-container">
+  <div class="contact-info">
+    <h3><i class="fas fa-address-card"></i> Contact Information</h3>
+    <p><i class="fas fa-phone"></i> <strong>Phone:</strong> <a href="tel:+18456821411">(845) 682-1411</a></p>
+    <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:thestewardswatch@gmail.com">thestewardswatch@gmail.com</a></p>
+    <p><i class="far fa-clock"></i> <strong>Hours:</strong> Available 7 days a week</p>
+  </div>
+
+  <div class="contact-info">
+    <h3><i class="fas fa-map-marker-alt"></i> Service Areas</h3>
+    <p>We currently serve homeowners throughout:</p>
+    <ul class="service-areas">
+      <li><i class="fas fa-check"></i> Putnam County, NY</li>
+      <li><i class="fas fa-check"></i> Dutchess County, NY (Southern)</li>
+    </ul>
+  </div>
+
+  <div class="contact-form">
+    <h3>Send Us a Message</h3>
+    <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+    <form class="inquiry-form" action="/contact" method="POST">
+      <div class="form-group" aria-hidden="true" style="display:none;">
+        <label for="website">Website</label>
+        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label for="name">Your Name <span class="required">*</span></label>
+        <input type="text" id="name" name="name" required placeholder="Jane Smith" autocomplete="name" value="{{ form_name }}">
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address <span class="required">*</span></label>
+        <input type="email" id="email" name="email" required placeholder="jane@example.com" autocomplete="email" value="{{ form_email }}">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="(845) 555-0100" autocomplete="tel" value="{{ form_phone }}">
+      </div>
+      <div class="form-group">
+        <label for="message">Message <span class="required">*</span></label>
+        <textarea id="message" name="message" rows="5" required placeholder="Tell us about your pet/house sitting needs, dates, anything helpful.">{{ form_message }}</textarea>
+      </div>
+      <button type="submit" class="button">Send Message</button>
+    </form>
+  </div>
+</div>
+</div>
+{% endblock %}

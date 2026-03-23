@@ -1,3 +1,5 @@
 (defpackage #:the-steward-website
   (:use #:cl)
-  (:export #:start-app))
+  (:export #:start-app
+           #:stop-app
+           #:main))

@@ -7,3 +7,11 @@
 #*
 *#
 *##
+
+# ignore local environment files (contain secrets — never commit these)
+.env
+.env.local
+
+# Nix
+.direnv/
+result
