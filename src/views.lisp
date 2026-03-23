@@ -77,6 +77,7 @@
 (defparameter +about-template+ (djula:compile-template* "about.html"))
 (defparameter +testimonials-template+ (djula:compile-template* "testimonials.html"))
 (defparameter +contact-template+ (djula:compile-template* "contact.html"))
+(defparameter +privacy-template+ (djula:compile-template* "privacy.html"))
 
 ;; Page rendering functions
 (defun render-index-page ()
@@ -116,6 +117,11 @@
 			  :form_email (or form-email "")
 			  :form_phone (or form-phone "")
 			  :form_message (or form-message "")
+			  :now (local-time:format-timestring nil (local-time:now) :format '(:year))))
+
+(defun render-privacy-page ()
+  (djula:render-template* +privacy-template+ nil
+			  :title "The Steward"
 			  :now (local-time:format-timestring nil (local-time:now) :format '(:year))))
 
 (defparameter +404-template+ (djula:compile-template* "404.html"))
