@@ -32,7 +32,7 @@
 (defparameter *services*
   '((:name "Home Check"
      :icon "fa-house-user"
-     :short-desc "A quick property check while you're away — no pets needed"
+     :short-desc "A quick property check while you're away — no pet care needed"
      :description "A 15–30 minute check on your home. We'll collect mail and packages, water plants, adjust lights and blinds, and make sure everything is secure."
      :price "$20"
      :price-unit "/ visit"
@@ -46,8 +46,8 @@
      :price-note nil)
     (:name "Drop-In Visit"
      :icon "fa-door-open"
-     :short-desc "Up to one hour — feeding, walks, playtime, mail & more"
-     :description "Up to one hour in your home. Feeding, fresh water, a walk or playtime, plant care, and mail collection — all included. We care for dogs, cats, and other pets."
+     :short-desc "One hour — feeding, walks, playtime, mail & more"
+     :description "One hour in your home. Feeding, fresh water, a walk or playtime, plant care, and mail collection — all included. We care for dogs, cats, and other pets."
      :price "$35"
      :price-unit "/ visit"
      :price-note nil)
