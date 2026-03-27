@@ -1064,6 +1064,44 @@ button.button:hover {
   margin-top: 0.25rem;
 }
 
+/* Animals We Care For section */
+.animals-section {
+  margin: 2rem 0 2.5rem;
+}
+
+.animals-section h2 {
+  margin-bottom: 1.5rem;
+}
+
+.animals-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  justify-content: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.animal-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.05rem;
+  color: var(--text-color);
+}
+
+.animal-item i {
+  color: var(--accent-color);
+  font-size: 1.1rem;
+}
+
+.animals-note {
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: 1.25rem;
+  font-style: italic;
+}
+
 /* Add-ons section */
 .addons-section {
   margin: 3rem 0 2rem;
