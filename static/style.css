@@ -353,12 +353,29 @@ h3 .fas, h3 .far {
 
 /* Responsive navigation for smaller screen */
 @media (max-width: 768px) {
+    header {
+        padding: 0.75rem 1rem;
+    }
+
     header .container {
         flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    .logo-container {
+        flex: 1;
     }
 
     .nav-toggle {
         display: block;
+        padding: 0.75rem;
+    }
+
+    .nav-toggle-bar {
+        width: 24px;
+        height: 3px;
+        margin: 4px 0;
     }
 
     .main-nav {
@@ -375,6 +392,7 @@ h3 .fas, h3 .far {
     .main-nav ul {
         flex-direction: column;
         align-items: center;
+        padding-top: 0.75rem;
     }
 
     .main-nav li {
@@ -1395,6 +1413,24 @@ button:focus-visible {
 @media (max-width: 480px) {
     header h1 {
 	font-size: 1.5rem;
+    }
+
+    header {
+	padding: 0.6rem 0.75rem;
+    }
+
+    .logo {
+	height: 55px;
+    }
+
+    .nav-toggle {
+	padding: 0.6rem;
+    }
+
+    .nav-toggle-bar {
+	width: 22px;
+	height: 2.5px;
+	margin: 4px 0;
     }
 
     footer {
