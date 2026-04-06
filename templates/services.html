@@ -41,22 +41,15 @@
 <!-- Add-Ons -->
 <section class="addons-section">
   <h2>Add-Ons</h2>
-  <table class="addons-table">
-    <thead>
-      <tr>
-        <th>Add-On</th>
-        <th>Additional Cost</th>
-      </tr>
-    </thead>
-    <tbody>
+  <div class="addons-list">
 {% for addon in addons %}
-      <tr>
-        <td data-label="Add-On">{{ addon.name }}</td>
-        <td data-label="Additional Cost">{{ addon.price }}</td>
-      </tr>
+    <div class="addon-item">
+      <i class="fas {{ addon.icon }} addon-icon"></i>
+      <span class="addon-name">{{ addon.name }}</span>
+      <span class="addon-price">{{ addon.price }}</span>
+    </div>
 {% endfor %}
-    </tbody>
-  </table>
+  </div>
 </section>
 
 <!-- Payment Methods -->
