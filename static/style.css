@@ -354,35 +354,51 @@ h3 .fas, h3 .far {
 /* Responsive navigation for smaller screen */
 @media (max-width: 768px) {
     header {
-        padding: 0.75rem 1rem;
+        padding: 0.4rem 1rem;
+        position: relative;
     }
 
     header .container {
-        flex-wrap: wrap;
         justify-content: space-between;
+        align-items: center;
         gap: 0;
     }
 
+    .logo {
+        height: 70px;
+    }
+
     .logo-container {
-        flex: 1;
+        display: flex;
+        align-items: center;
     }
 
     .nav-toggle {
-        display: block;
-        padding: 0.75rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem;
+        min-height: 44px;
+        min-width: 44px;
     }
 
     .nav-toggle-bar {
-        width: 24px;
+        width: 28px;
         height: 3px;
         margin: 4px 0;
     }
 
     .main-nav {
-        flex-basis: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--primary-color);
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.35s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     .main-nav.open {
@@ -1416,20 +1432,21 @@ button:focus-visible {
     }
 
     header {
-	padding: 0.6rem 0.75rem;
+	padding: 0.35rem 0.75rem;
     }
 
     .logo {
-	height: 55px;
+	height: 60px;
     }
 
     .nav-toggle {
-	padding: 0.6rem;
+	min-height: 40px;
+	min-width: 40px;
     }
 
     .nav-toggle-bar {
-	width: 22px;
-	height: 2.5px;
+	width: 26px;
+	height: 3px;
 	margin: 4px 0;
     }
 
