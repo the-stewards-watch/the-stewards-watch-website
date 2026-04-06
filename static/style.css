@@ -1139,6 +1139,59 @@ button.button:hover {
   text-align: center;
 }
 
+/* Add-ons table mobile override — stacked layout without overlap */
+@media (max-width: 767px) {
+  .addons-table thead {
+    display: none;
+  }
+
+  .addons-table,
+  .addons-table tbody,
+  .addons-table tr,
+  .addons-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .addons-table tr {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--neutral-light);
+    border-radius: 8px;
+    border: none;
+  }
+
+  .addons-table td {
+    padding: 0.25rem 0;
+    padding-left: 0;
+    text-align: left;
+    border-bottom: none;
+    position: static;
+  }
+
+  .addons-table td:before {
+    display: block;
+    position: static;
+    width: auto;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #666;
+    margin-bottom: 0.15rem;
+  }
+
+  .addons-table td[data-label="Add-On"] {
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .addons-table td[data-label="Additional Cost"] {
+    color: var(--accent-color);
+    font-weight: 600;
+  }
+}
+
 /* Testimonial pull quote — homepage highlight band */
 .testimonial-highlight {
   background-color: var(--neutral-dark);
