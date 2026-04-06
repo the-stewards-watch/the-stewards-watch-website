@@ -62,7 +62,7 @@
 (defparameter *addons*
   '((:name "Each additional pet" :price "+$10" :icon "fa-paw")
     (:name "Puppy (under 1 year) or senior pet" :price "+$10" :icon "fa-dog")
-    (:name "Medication administration" :price "Discussed at Meet & Greet" :icon "fa-pills")
+    (:name "Medication administration" :price "typically +$5–10 (varies by type)" :icon "fa-pills")
     (:name "Last-minute booking (under 48 hrs notice)" :price "+$15" :icon "fa-clock")
     (:name "Major holiday surcharge" :price "+$15" :icon "fa-calendar-alt")))
 
