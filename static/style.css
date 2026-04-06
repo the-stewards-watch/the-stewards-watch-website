@@ -1141,29 +1141,44 @@ button.button:hover {
   margin: 3rem 0 2rem;
 }
 
-.addons-table {
-  max-width: 600px;
-  margin: 1rem auto;
+.addons-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 550px;
+  margin: 1.5rem auto 0;
 }
 
-.addons-table th,
-.addons-table td {
-  padding: 0.75rem 1rem;
-  text-align: left;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-}
-
-.addons-table thead th {
-  background-color: var(--neutral-dark);
-  color: white;
-}
-
-.addons-table tbody tr:nth-child(even) td {
+.addon-item {
   background-color: var(--neutral-light);
+  padding: 0.85rem 1.25rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
 }
 
-.addons-table tbody tr:last-child td {
-  border-bottom: none;
+.addon-icon {
+  color: var(--accent-color);
+  font-size: 1.25rem;
+  width: 1.5rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.addon-name {
+  font-weight: 500;
+  color: var(--neutral-dark);
+  flex: 1;
+  text-align: left;
+}
+
+.addon-price {
+  color: var(--neutral-dark);
+  font-weight: 700;
+  font-size: 1rem;
+  white-space: nowrap;
 }
 
 .addons-note {
@@ -1171,59 +1186,6 @@ button.button:hover {
   color: #777;
   margin-top: 1rem;
   text-align: center;
-}
-
-/* Add-ons table mobile override — stacked layout without overlap */
-@media (max-width: 767px) {
-  .addons-table thead {
-    display: none;
-  }
-
-  .addons-table,
-  .addons-table tbody,
-  .addons-table tr,
-  .addons-table td {
-    display: block;
-    width: 100%;
-  }
-
-  .addons-table tr {
-    margin-bottom: 1rem;
-    padding: 1rem;
-    background-color: var(--neutral-light);
-    border-radius: 8px;
-    border: none;
-  }
-
-  .addons-table td {
-    padding: 0.25rem 0;
-    padding-left: 0;
-    text-align: left;
-    border-bottom: none;
-    position: static;
-  }
-
-  .addons-table td:before {
-    display: block;
-    position: static;
-    width: auto;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #666;
-    margin-bottom: 0.15rem;
-  }
-
-  .addons-table td[data-label="Add-On"] {
-    font-weight: 600;
-    font-size: 1.05rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .addons-table td[data-label="Additional Cost"] {
-    color: var(--accent-color);
-    font-weight: 600;
-  }
 }
 
 /* Testimonial pull quote — homepage highlight band */
