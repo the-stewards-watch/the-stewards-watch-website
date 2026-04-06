@@ -60,11 +60,11 @@
      :price-note "Book 6+ nights and get one night free")))
 
 (defparameter *addons*
-  '((:name "Each additional pet" :price "+$10")
-    (:name "Puppy (under 1 year) or senior pet" :price "+$10")
-    (:name "Medication administration" :price "Discussed at Meet & Greet")
-    (:name "Last-minute booking (under 48 hrs notice)" :price "+$15")
-    (:name "Major holiday surcharge" :price "+$15")))
+  '((:name "Each additional pet" :price "+$10" :icon "fa-paw")
+    (:name "Puppy (under 1 year) or senior pet" :price "+$10" :icon "fa-dog")
+    (:name "Medication administration" :price "typically +$5–10 (varies by type)" :icon "fa-pills")
+    (:name "Last-minute booking (under 48 hrs notice)" :price "+$15" :icon "fa-clock")
+    (:name "Major holiday surcharge" :price "+$15" :icon "fa-calendar-alt")))
 
 ;; ---------------------------------------------------------------------------
 ;; Template definitions

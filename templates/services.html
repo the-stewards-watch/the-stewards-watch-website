@@ -41,38 +41,30 @@
 <!-- Add-Ons -->
 <section class="addons-section">
   <h2>Add-Ons</h2>
-  <table class="addons-table">
-    <thead>
-      <tr>
-        <th>Add-On</th>
-        <th>Additional Cost</th>
-      </tr>
-    </thead>
-    <tbody>
+  <div class="addons-list">
 {% for addon in addons %}
-      <tr>
-        <td data-label="Add-On">{{ addon.name }}</td>
-        <td data-label="Additional Cost">{{ addon.price }}</td>
-      </tr>
+    <div class="addon-item">
+      <i class="fas {{ addon.icon }} addon-icon"></i>
+      <span class="addon-name">{{ addon.name }}</span>
+      <span class="addon-price">{{ addon.price }}</span>
+    </div>
 {% endfor %}
-    </tbody>
-  </table>
+  </div>
 </section>
 
 <!-- Payment Methods -->
 <section class="payment-section">
   <h2>Payment</h2>
-  <p>Payment is due at the end of each service, or on an agreed upon schedule for recurring bookings. We accept:</p>
+  <p>We accept cash or card. Once we agree on dates and details, we'll send an invoice for the 25% deposit to secure your booking. Final payment is due at the end of service, or on an agreed schedule for recurring bookings.</p>
   <div class="payment-methods">
     <div class="payment-method">
       <i class="fas fa-money-bill-wave payment-icon"></i>
       <h3>Cash</h3>
     </div>
     <div class="payment-method">
-      <i class="fas fa-university payment-icon"></i>
-      <h3>Zelle</h3>
-      <p>Search for <strong>thestewardswatch</strong> in your banking app, or scan the QR code below.</p>
-      <img src="/static/images/zelle-qr.png" alt="Zelle QR code for The Steward's Watch LLC" class="zelle-qr">
+      <i class="fas fa-credit-card payment-icon"></i>
+      <h3>Card</h3>
+      <p>Pay securely online via invoice. A 3% processing fee applies.</p>
     </div>
   </div>
 </section>
