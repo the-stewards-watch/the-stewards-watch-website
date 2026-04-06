@@ -23,13 +23,28 @@ static/         CSS, JS, images
   effects.js      Parallax, fade-in animations, UI effects
 ```
 
-## Git Workflow
+## Git Workflow (Git Flow)
 
-- **main** — production-ready releases only
-- **develop** — integration branch; all feature work merges here first
-- Feature branches off `develop`, PRs target `develop`
-- Claude Code sessions use `claude/*` branches — branch from and PR back into `develop`
-- Never push directly to `main`
+This project uses **git flow** strictly:
+
+### Branches
+
+| Branch | Purpose |
+|--------|---------|
+| `main` | Production releases only — never commit directly |
+| `develop` | Integration branch — all features merge here first |
+| `feature/*` | New features — branch from `develop`, PR back to `develop` |
+| `release/*` | Release prep — branch from `develop`, merge to `main` and `develop` |
+| `hotfix/*` | Urgent production fixes — branch from `main`, merge to `main` and `develop` |
+
+### Rules
+
+- **Never push directly to `main` or `develop`**
+- All changes go through feature branches and PRs
+- Feature branches: `feature/<short-description>` (e.g., `feature/mobile-nav-fix`)
+- Claude Code sessions: use `feature/` branches, not `claude/*`
+- PRs require review before merging to `develop`
+- Only `release/*` and `hotfix/*` branches merge to `main`
 
 ## Coding Conventions
 
