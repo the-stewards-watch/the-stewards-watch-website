@@ -55,7 +55,7 @@
      :icon "fa-moon"
      :short-desc "Full pet care and home security overnight"
      :description "We stay at your home overnight. Includes all pet care, mail, lighting, and keeping your home looking lived-in while you're away."
-     :price "$85"
+     :price "$75"
      :price-unit "/ night"
      :price-note "Book 6+ nights and get one night free")))
 
