@@ -48,21 +48,23 @@
      :icon "fa-door-open"
      :short-desc "One hour — feeding, walks, playtime, mail & more"
      :description "One hour in your home. Feeding, fresh water, a walk or playtime, plant care, and mail collection — all included. We care for dogs, cats, and other pets."
-     :price "$40"
+     :price "$50"
      :price-unit "/ visit"
      :price-note nil)
     (:name "Overnight Stay"
      :icon "fa-moon"
-     :short-desc "Full pet care and home security overnight"
-     :description "We stay at your home overnight. Includes all pet care, mail, lighting, and keeping your home looking lived-in while you're away."
+     :short-desc "Full pet care and home security, 8 PM to 8 AM"
+     :description "We stay at your home from 8 PM to 8 AM. Includes an evening walk and feeding, overnight care, a morning walk and feeding, plus mail, lighting, and keeping your home looking lived-in. Need us there during the day too? Add daytime coverage below."
      :price "$75"
      :price-unit "/ night"
-     :price-note "Book 6+ nights and get one night free")))
+     :price-note "Add daytime coverage (8 AM–8 PM) for $45/day")))
 
 (defparameter *addons*
-  '((:name "Each additional pet" :price "+$10" :icon "fa-paw")
+  '((:name "Daytime coverage during an overnight stay (8 AM–8 PM)" :price "+$45 / day" :icon "fa-sun")
+    (:name "Each additional pet — walks & visits" :price "+$10" :icon "fa-paw")
+    (:name "Each additional pet — overnight stays" :price "+$20" :icon "fa-paw")
     (:name "Puppy (under 1 year) or senior pet" :price "+$10" :icon "fa-dog")
-    (:name "Medication administration" :price "typically +$5–10 (varies by type)" :icon "fa-pills")
+    (:name "Medication administration" :price "+$10" :icon "fa-pills")
     (:name "Last-minute booking (under 48 hrs notice)" :price "+$15" :icon "fa-clock")
     (:name "Major holiday surcharge" :price "+$15" :icon "fa-calendar-alt")))
 
