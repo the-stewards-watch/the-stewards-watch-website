@@ -53,20 +53,20 @@
      :price-note nil)
     (:name "Overnight Stay"
      :icon "fa-moon"
-     :short-desc "Full pet care and home security, 8 PM to 8 AM"
-     :description "We stay at your home from 8 PM to 8 AM. Includes an evening walk and feeding, overnight care, a morning walk and feeding, plus mail, lighting, and keeping your home looking lived-in. Need us there during the day too? Add daytime coverage below."
+     :short-desc "Full pet care and home security, 8 PM to 8 AM — up to 2 pets"
+     :description "We stay at your home from 8 PM to 8 AM, caring for up to two pets. Covers an evening walk and feeding, overnight care, a morning walk and feeding, plus mail, lighting, and keeping your home looking lived-in. Need us there during the day too? Add daytime coverage below."
      :price "$75"
      :price-unit "/ night"
      :price-note "Add daytime coverage (8 AM–8 PM) for $45/day")))
 
 (defparameter *addons*
   '((:name "Daytime coverage during an overnight stay (8 AM–8 PM)" :price "+$45 / day" :icon "fa-sun")
-    (:name "Each additional pet — walks & visits" :price "+$10" :icon "fa-paw")
-    (:name "Each additional pet — overnight stays" :price "+$20" :icon "fa-paw")
-    (:name "Puppy (under 1 year) or senior pet" :price "+$10" :icon "fa-dog")
-    (:name "Medication administration" :price "+$10" :icon "fa-pills")
-    (:name "Last-minute booking (under 48 hrs notice)" :price "+$15" :icon "fa-clock")
-    (:name "Major holiday surcharge" :price "+$15" :icon "fa-calendar-alt")))
+    (:name "Each additional pet — walks & visits" :price "+$10 / visit" :icon "fa-paw")
+    (:name "Each pet beyond two — overnight stays" :price "+$20 / night" :icon "fa-paw")
+    (:name "Puppy (under 1 year) or pet needing special care" :price "+$10 / night or visit" :icon "fa-dog")
+    (:name "Medication administration" :price "+$10 / visit" :icon "fa-pills")
+    (:name "Last-minute booking (under 48 hrs notice)" :price "+$15 / booking" :icon "fa-clock")
+    (:name "Major holiday surcharge" :price "+$15 / day" :icon "fa-calendar-alt")))
 
 ;; ---------------------------------------------------------------------------
 ;; Template definitions
